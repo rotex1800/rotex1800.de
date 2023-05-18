@@ -16,6 +16,9 @@ jobs:
         with:
           release-type: php
           token: ${{ secrets.PAT }}
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
+          prerelease: true
           extra-files: |
             config/app.php
 
