@@ -1,0 +1,176 @@
+name: Check
+
+on:
+  merge_group:
+  pull_request:
+    branches: [ "main" ]
+    types: [ opened, edited, reopened, synchronize ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  checks: write
+  pull-requests: write
+  actions: read
+  issues: read
+  contents: read
+  packages: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - uses: actions/checkout@v3
+
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Generate key
+        run: php artisan key:generate --env=testing
+
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
+
+#      - name: Upgrade Chrome Driver
+#        run: php artisan dusk:chrome-driver --detect
+#
+#      - name: Start Chrome Driver
+#        run: ./vendor/laravel/dusk/bin/chromedriver-linux &
+
+      - name: Install and Build npm
+        run: |
+          npm ci
+          npm run build
+
+      - name: Run Laravel Server
+        run: php artisan serve &
+
+      - name: Execute tests
+        env:
+          XDEBUG_MODE: coverage
+        run: >
+          vendor/bin/pest --ci
+          --log-junit junit-report.xml
+          --coverage --coverage-clover coverage-report.xml --min=50
+
+      - name: Report Coverage in comment
+        uses: lucassabreu/comment-coverage-clover@v0.9.2
+        with:
+          file: coverage-report.xml
+
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: tests/Browser/screenshots
+
+      - name: Upload Console Logs
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: console
+          path: tests/Browser/console
+
+      - name: Publish Screenshots
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: screenshots
+          path: screenshots/
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          junit_files: ./junit-report.xml
+
+  pint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - run: ./vendor/bin/pint
+      - uses: reviewdog/action-suggester@v1
+        with:
+          tool_name: pint
+
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: shellcheck
+        uses: reviewdog/action-shellcheck@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-actionlint@v1
+
+  scan-for-secrets:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'merge_group'
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE}}
+
+  conventional-commits:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'merge_group'
+    steps:
+      - name: At least one conventional commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr view ${{ github.event.number }} \
+          -R ${{ github.repository }} \
+          --json title,commits --jq '.commits[].messageHeadline, .title' \
+          | grep -E '(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\([-a-zA-Z0-9]+\))?.+'
+
+  phpstan-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Run phpstan
+        uses: paulschuberth/action-reviewdog-phpstan@main
+        with:
+          github_token: '${{ github.token }}'
+          level: 'error'
+          fail_on_error: 'true'
+          target_directory: 'app'
+
+  dependency-review:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'merge_group'
+    steps:
+      - name: 'Checkout Repository'
+        uses: actions/checkout@v3
+      - name: 'Dependency Review'
+        uses: actions/dependency-review-action@v3

@@ -1,0 +1,55 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: false
+        description: The environment in which to deploy
+        default: Production
+        type: string
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: false
+        description: The environment in which to deploy
+        default: Production
+        type: choice
+        options:
+          - Production
+
+jobs:
+  select-environment:
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.environment.outputs.url }}
+    steps:
+      - shell: bash
+        id: environment
+        run: |
+          url="https://new.rotex1800.de"
+          if [[ "${{ inputs.environment }}" == "Production" ]]; then
+            url="https://new.rotex1800.de"
+          fi
+          echo "url=${url}" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs:
+      - select-environment
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ needs.select-environment.outputs.url }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          passphrase: ${{ secrets.SSHKEY_PASSPHRASE }}
+          script: |
+            source "${{ vars.USER_BASHRC }}"
+            cd "${{ vars.PROJECT_LOCATION }}"
+            ./.scripts/deploy.sh
