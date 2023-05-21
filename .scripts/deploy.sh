@@ -6,8 +6,6 @@ echo "Deployment started"
 # Enter maintenance mode
 (php artisan down) || true
 
-git pull origin main
-
 # Install composer dependencies
 composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
@@ -32,6 +30,9 @@ php artisan view:clear
 php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
+
+# Set application key
+php artisan key:generate --force
 
 # Exit maintenance mode
 php artisan up
