@@ -49,7 +49,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSHKEY }}
           passphrase: ${{ secrets.SSHKEY_PASSPHRASE }}
-          script: |
-            source "${{ vars.USER_BASHRC }}"
-            cd "${{ vars.PROJECT_LOCATION }}"
-            ./.scripts/deploy.sh
+          script: source "${{ vars.USER_BASHRC }}" && cd "${{ vars.PROJECT_LOCATION }}" && ./.scripts/deploy.sh
