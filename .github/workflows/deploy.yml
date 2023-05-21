@@ -50,6 +50,7 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           passphrase: ${{ secrets.SSHKEY_PASSPHRASE }}
           script: |
+            cd "${{ secrets.WWW_CONTENT_ROOT }}"
             source "${{ vars.USER_BASHRC }}"
             cd "${{ vars.PROJECT_LOCATION }}"
             ./.scripts/deploy.sh
