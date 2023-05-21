@@ -11,7 +11,7 @@ test('/home route is named "home"', function () {
 
 it('contains "Rotex 1800" in headline', function () {
     $this->get(route('home'))
-        ->assertElementExists('h1', function (\Sinnbeck\DomAssertions\Asserts\AssertElement $element) {
+        ->assertElementExists('h1', function (Sinnbeck\DomAssertions\Asserts\AssertElement $element) {
             $element->containsText('Rotex 1800');
         });
 });
