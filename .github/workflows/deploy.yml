@@ -53,4 +53,6 @@ jobs:
             cd "${{ secrets.WWW_CONTENT_ROOT }}"
             source "${{ vars.USER_BASHRC }}"
             cd "${{ vars.PROJECT_LOCATION }}"
+            chmod +x ./.scripts/deploy.sh
             ./.scripts/deploy.sh
+            chmod -x ./.scripts/
