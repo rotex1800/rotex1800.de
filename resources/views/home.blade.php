@@ -8,8 +8,6 @@
     <title>Rotex 1800 e.V.</title>
 </head>
 <body>
-<x-markdown>
-    # Rotex 1800
-</x-markdown>
+{!! $content !!}
 </body>
 </html>
