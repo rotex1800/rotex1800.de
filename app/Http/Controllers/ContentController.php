@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
 
-class HomeController extends Controller
+class ContentController extends Controller
 {
     private MarkdownRenderer $markdown;
 
