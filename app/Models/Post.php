@@ -3,18 +3,19 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Post
+class Post extends Model
 {
-    private const FRONTMATTER = 1;
+    use HasFactory;
 
+    private const FRONTMATTER = 1;
     private const CONTENT = 2;
 
-    public string $title = '';
-
-    public string $content = '';
-
-    public Carbon $publishedAt;
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
 
     public static function fromHugo(string $hugoFile): Post
     {
