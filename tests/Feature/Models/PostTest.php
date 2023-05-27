@@ -4,23 +4,17 @@ use App\Models\Post;
 use Carbon\Carbon;
 
 it('has title', function () {
-    expect(get_class_vars(Post::class))
-        ->toHaveKey('title')
-        ->and(new Post())
+    expect(Post::factory()->create())
         ->title->toBeString();
 });
 
 it('has a published date', function () {
-    expect(get_class_vars(Post::class))
-        ->toHaveKey('publishedAt')
-        ->and(new Post())
-        ->published_at->toBeNull();
+    expect(Post::factory()->create())
+        ->published_at->toBeInstanceOf(Carbon::class);
 });
 
 it('has content', function () {
-    expect(get_class_vars(Post::class))
-        ->toHaveKey('content')
-        ->and(new Post())
+    expect(Post::factory()->create())
         ->content->toBeString();
 });
 
