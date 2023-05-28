@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
@@ -18,11 +20,12 @@ class ContentController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): Factory|View
     {
-        $file = Storage::disk('content')->get('example.md');
-
-        return view('home')->with(['content' => $this->markdown->toHtml($file),
-        ]);
+        $fileContent = Storage::disk('content')->get('example.md');
+        if ($fileContent == null) {
+            abort(404);
+        }
+        return view('home')->with(['content' => $this->markdown->toHtml($fileContent)]);
     }
 }
