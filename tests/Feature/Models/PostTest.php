@@ -55,20 +55,6 @@ EOD;
     expect($post)->toBeInstanceOf(Post::class);
 });
 
-it('has function to calculate checksum', function () {
-    $post = Post::factory()->make();
-    $post->checksum = null;
-    expect($post->checksum)->toBeNull()
-        ->and(method_exists($post, 'updateChecksum'))
-        ->toBeTrue();
-
-    $post->updateChecksum();
-    expect($post->checksum)
-        ->not->toBeNull()
-        ->toBeString();
-
-});
-
 it('sets checksum when creating through fromHugo method', function () {
     $fileContent = <<<'EOD'
 ---
