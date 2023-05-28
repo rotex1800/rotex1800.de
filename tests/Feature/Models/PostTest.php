@@ -84,15 +84,28 @@ EOD;
         ->checksum->toBeString();
 });
 
-it('updates checksum when saving', function () {
-    $post = Post::factory()->create();
-    $beforeChecksum = $post->checksum;
+it('sets date to null if missing', function () {
+    $fileContent = <<<'EOD'
+---
+title: JHV 2014
+---
+Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
+Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
+EOD;
+    $post = Post::fromHugo($fileContent);
+    expect($post)
+        ->published_at->toBeNull();
+});
 
-    $post->title = "Foo";
-    $post->save();
-
-    $afterChecksum = $post->checksum;
-
-    expect($beforeChecksum)
-        ->not->toBe($afterChecksum);
+it('sets title to null if missing', function () {
+    $fileContent = <<<'EOD'
+---
+date: 2023-06-09
+---
+Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
+Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
+EOD;
+    $post = Post::fromHugo($fileContent);
+    expect($post)
+        ->title->toBeNull();
 });

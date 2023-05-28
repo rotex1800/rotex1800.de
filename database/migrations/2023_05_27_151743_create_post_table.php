@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->text('content');
             $table->string('checksum');
-            $table->dateTime('published_at');
+            $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });
     }
