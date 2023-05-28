@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Carbon\Carbon;
+use Illuminate\Database\Schema\Blueprint;
 
 it('has title', function () {
     expect(Post::factory()->create())
@@ -94,4 +95,15 @@ EOD;
     $post = Post::fromHugo($fileContent);
     expect($post)
         ->title->toBeNull();
+});
+
+it('has index on checksum column', function () {
+    Schema::table('posts', function (Blueprint $blueprint) {
+        $schemaManager = Schema::getConnection()->getDoctrineSchemaManager();
+        $indexes = $schemaManager->listTableIndexes('posts');
+
+        $foundIndex = array_key_exists("posts_checksum_index", $indexes);
+
+        expect($foundIndex)->toBeTrue();
+    });
 });

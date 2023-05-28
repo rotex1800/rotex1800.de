@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('content');
-            $table->string('checksum');
+            $table->string('checksum')->index('posts_checksum_index');
             $table->dateTime('published_at')->nullable();
             $table->timestamps();
         });
