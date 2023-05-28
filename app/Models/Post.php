@@ -32,12 +32,7 @@ class Post extends Model
         }
         $post->content = $content;
 
-        $post->updateChecksum();
+        $post->checksum = md5($hugoFile);
         return $post;
-    }
-
-    public function updateChecksum(): void
-    {
-        $this->checksum = md5($this->title . $this->content . $this->published_at->timestamp);
     }
 }
