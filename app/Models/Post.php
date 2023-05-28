@@ -23,7 +23,8 @@ class Post extends Model
 
         $components = explode('---', $hugoFile);
         $content = trim($components[self::CONTENT]);
-        $frontmatter = yaml_parse($components[self::FRONTMATTER]);
+        $frontmatter = (array)yaml_parse($components[self::FRONTMATTER]);
+
         if (array_key_exists('title', $frontmatter)) {
             $post->title = $frontmatter['title'];
         }

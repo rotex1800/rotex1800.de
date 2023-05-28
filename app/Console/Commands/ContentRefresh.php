@@ -26,7 +26,7 @@ class ContentRefresh extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $markdownFiles = $this->findMarkdownFiles();
         $this->deleteOutdatedPosts($markdownFiles);
@@ -45,6 +45,10 @@ class ContentRefresh extends Command
         });
     }
 
+    /**
+     * @param array<string> $markdownFiles
+     * @return void
+     */
     private function deleteOutdatedPosts(array $markdownFiles): void
     {
         $hashes = array_map(function ($file) {
@@ -55,14 +59,18 @@ class ContentRefresh extends Command
     }
 
     /**
-     * @param array $files
+     * @param array<string> $files
      * @return void
      */
     private function createPostEntries(array $files): void
     {
         array_map(function ($file) {
             try {
-                $post = Post::fromHugo(Storage::disk('content')->get($file));
+                $fileContent = Storage::disk('content')->get($file);
+                if ($fileContent == null) {
+                    return;
+                }
+                $post = Post::fromHugo($fileContent);
                 $post->save();
             } catch (Exception $exception) {
                 ray($exception);
