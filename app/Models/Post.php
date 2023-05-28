@@ -25,9 +25,15 @@ class Post extends Model
         $content = trim($components[self::CONTENT]);
         $frontmatter = yaml_parse($components[self::FRONTMATTER]);
         $post->title = $frontmatter['title'];
-        $post->publishedAt = Carbon::parse($frontmatter['date']);
+        $post->published_at = Carbon::parse($frontmatter['date']);
         $post->content = $content;
 
+        $post->updateChecksum();
         return $post;
+    }
+
+    public function updateChecksum(): void
+    {
+        $this->checksum = md5($this->title . $this->content . $this->published_at->timestamp);
     }
 }

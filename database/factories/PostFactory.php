@@ -16,10 +16,17 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+
+        $title = fake()->words(asText: true);
+        $content = fake()->text;
+        $publishedAt = fake()->dateTime;
+
+        $checksum = md5($title . $content . $publishedAt->getTimestamp());
         return [
-            'title' => fake()->words(asText: true),
-            'content' => fake()->text,
-            'published_at' => fake()->dateTime,
+            'title' => $title,
+            'content' => $content,
+            'published_at' => $publishedAt,
+            'checksum' => $checksum,
         ];
     }
 }
