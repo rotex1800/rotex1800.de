@@ -24,8 +24,12 @@ class Post extends Model
         $components = explode('---', $hugoFile);
         $content = trim($components[self::CONTENT]);
         $frontmatter = yaml_parse($components[self::FRONTMATTER]);
-        $post->title = $frontmatter['title'];
-        $post->published_at = Carbon::parse($frontmatter['date']);
+        if (array_key_exists('title', $frontmatter)) {
+            $post->title = $frontmatter['title'];
+        }
+        if (array_key_exists('date', $frontmatter)) {
+            $post->published_at = Carbon::parse($frontmatter['date']);
+        }
         $post->content = $content;
 
         $post->updateChecksum();
