@@ -75,7 +75,7 @@ class ContentRefresh extends Command
                 $post->save();
                 $post->links()->save(Link::fromFilePath($path));
             } catch (Exception $exception) {
-                ray($exception);
+                report($exception);
             }
         }, $paths);
     }
