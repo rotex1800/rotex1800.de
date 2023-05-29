@@ -4,6 +4,7 @@ use App\Console\Commands\ContentRefresh;
 use App\Models\Link;
 use App\Models\Post;
 use Tests\TestData\FileContents;
+use function Pest\Laravel\assertDatabaseEmpty;
 
 it('is called using "content:refresh"', function () {
     $availableCommands = Artisan::all();
@@ -56,4 +57,17 @@ it('removes posts from database that are not read from disk', function () {
 
     // Assert
     $this->assertDatabaseCount('posts', 1);
+});
+
+it('does not create post for empty file', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->put('empty.md', '');
+
+    // Act
+    Artisan::call('content:refresh');
+
+    // Assert
+    assertDatabaseEmpty('posts');
+    assertDatabaseEmpty('links');
 });
