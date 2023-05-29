@@ -1,6 +1,7 @@
 <?php
 
 use App\Console\Commands\ContentRefresh;
+use App\Models\Link;
 use App\Models\Post;
 use Tests\TestData\FileContents;
 
@@ -23,7 +24,11 @@ it('loads content into database', function () {
 
     Artisan::call('content:refresh');
 
-    expect(Post::all()->count())->toEqual(2);
+    $this->assertDatabaseCount(Post::class, 2);
+    $this->assertDatabaseCount(Link::class, 2);
+
+    $this->assertDatabaseHas('links', ['path' => 'kalender']);
+    $this->assertDatabaseHas('links', ['path' => 'posts/2014-jhv']);
 });
 
 it('sets post checksum to md5 hash of file', function () {
@@ -45,7 +50,6 @@ it('removes posts from database that are not read from disk', function () {
     Post::factory()->count(2)->create();
     Storage::fake('content');
     Storage::disk('content')->put('kalender.md', FileContents::CALENDAR_FILE);
-
 
     // Act
     Artisan::call('content:refresh');
