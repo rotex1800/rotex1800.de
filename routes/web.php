@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,7 @@ Route::get('/', function () {
     return redirect('/home');
 });
 
-Route::get('/home', \App\Http\Controllers\ContentController::class)->name('home');
+Route::get('/home', ContentController::class)->name('home');
+
+Route::get('/{path}', ContentController::class)
+    ->where('path', '.+');
