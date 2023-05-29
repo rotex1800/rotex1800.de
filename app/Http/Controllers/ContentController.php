@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Link;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
 
 class ContentController extends Controller
@@ -20,13 +20,12 @@ class ContentController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request): Factory|View
+    public function __invoke(Request $request, Link $link): Factory|View
     {
-        $path = $request->path() . '.md';
-        $fileContent = Storage::disk('content')->get($path);
-        if ($fileContent == null) {
+        $post = $link->post;
+        if ($post == null) {
             abort(404);
         }
-        return view('home')->with(['content' => $this->markdown->toHtml($fileContent)]);
+        return view('home')->with(['content' => $this->markdown->toHtml($post->content)]);
     }
 }
