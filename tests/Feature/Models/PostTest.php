@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Link;
 use App\Models\Post;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Schema\Blueprint;
 
 it('has title', function () {
@@ -98,12 +100,24 @@ EOD;
 });
 
 it('has index on checksum column', function () {
-    Schema::table('posts', function (Blueprint $blueprint) {
         $schemaManager = Schema::getConnection()->getDoctrineSchemaManager();
         $indexes = $schemaManager->listTableIndexes('posts');
 
         $foundIndex = array_key_exists("posts_checksum_index", $indexes);
 
         expect($foundIndex)->toBeTrue();
-    });
+});
+
+it('has many links', function () {
+    $post = Post::factory()
+        ->has(Link::factory()->count(2))
+        ->create();
+    expect($post)
+        ->toHaveMethod('links')
+        ->and($post->links())
+        ->toBeInstanceOf(HasMany::class)
+        ->and($post->links)
+        ->toBeCollection()
+        ->toHaveCount(2)
+        ->first()->toBeInstanceOf(Link::class);
 });
