@@ -110,4 +110,12 @@ Zusammenarbeit und wünschen unserem neuen Vorstand, sowie den Gasteltern und
 Inbounds ein erfolgreiches, erlebnisreiches und unvergessliches Jahr 2014/2015!
 EOD;
 
+
+    const EXAMPLE = <<<'EOD'
+# Hello Rotex 1800
+
+This is a markdown file read from disk!
+
+EOD;
+
 }

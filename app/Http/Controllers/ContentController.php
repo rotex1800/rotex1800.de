@@ -22,7 +22,8 @@ class ContentController extends Controller
      */
     public function __invoke(Request $request): Factory|View
     {
-        $fileContent = Storage::disk('content')->get('example.md');
+        $path = $request->path() . '.md';
+        $fileContent = Storage::disk('content')->get($path);
         if ($fileContent == null) {
             abort(404);
         }
