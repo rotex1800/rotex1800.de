@@ -20,5 +20,5 @@ Route::get('/', function () {
 
 Route::get('/home', ContentController::class)->name('home');
 
-Route::get('/{path}', ContentController::class)
-    ->where('path', '.+');
+Route::get('/{link}', ContentController::class)
+    ->where('link', '.+');

@@ -33,3 +33,8 @@ it('can be created from file path', function () {
     expect($link->path)
         ->toBe('/posts/über-uns');
 });
+
+it('uses path as route key name', function () {
+    expect(Link::factory()->make())
+        ->getRouteKeyName()->toBe('path');
+});

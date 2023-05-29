@@ -14,6 +14,11 @@ class Link extends Model
         'path'
     ];
 
+    public function getRouteKeyName(): string
+    {
+        return 'path';
+    }
+
     public static function fromFilePath(string $path): self
     {
         $sanitized = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
