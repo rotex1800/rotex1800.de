@@ -14,6 +14,12 @@ class Link extends Model
         'path'
     ];
 
+    public static function fromFilePath(string $path): self
+    {
+        $sanitized = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
+        return new Link(['path' => $sanitized]);
+    }
+
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);

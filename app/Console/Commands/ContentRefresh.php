@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Link;
 use App\Models\Post;
 use Exception;
 use Illuminate\Console\Command;
@@ -59,22 +60,23 @@ class ContentRefresh extends Command
     }
 
     /**
-     * @param array<string> $files
+     * @param array<string> $paths
      * @return void
      */
-    private function createPostEntries(array $files): void
+    private function createPostEntries(array $paths): void
     {
-        array_map(function ($file) {
+        array_map(function ($path) {
             try {
-                $fileContent = Storage::disk('content')->get($file);
+                $fileContent = Storage::disk('content')->get($path);
                 if ($fileContent == null) {
                     return;
                 }
                 $post = Post::fromHugo($fileContent);
                 $post->save();
+                $post->links()->save(Link::fromFilePath($path));
             } catch (Exception $exception) {
                 ray($exception);
             }
-        }, $files);
+        }, $paths);
     }
 }

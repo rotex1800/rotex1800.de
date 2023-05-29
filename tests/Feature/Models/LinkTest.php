@@ -27,3 +27,9 @@ test('has index on path column', function () {
     expect(array_key_exists('links_path_index', $indexes))
         ->toBeTrue();
 });
+
+it('can be created from file path', function () {
+    $link = Link::fromFilePath('/posts/über-uns.md');
+    expect($link->path)
+        ->toBe('/posts/über-uns');
+});
