@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('menu_entries', function (Blueprint $table) {
             $table->id();
             $table->string('text');
-            $table->string('href');
+            $table->string('path');
             $table->string('menu');
             $table->integer('order');
+            $table->string('checksum');
             $table->timestamps();
         });
     }

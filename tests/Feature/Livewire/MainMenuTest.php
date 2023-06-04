@@ -13,16 +13,16 @@ it('can render MainMenu', function () {
 
 it('contains top level entries with given strings', function () {
     $expectedEntries = [
-        'Posts', 'Über uns', 'Kalender', 'Downloads'
+        'Posts', 'Über uns', 'Kalender', 'Downloads',
     ];
     Livewire::test(MainMenu::class, [
-        'entries' => $expectedEntries
+        'entries' => $expectedEntries,
     ])
         ->assertStatus(200)
         ->assertElementExists('menu', function (AssertElement $element) use ($expectedEntries) {
             foreach ($expectedEntries as $entry) {
                 $element->contains('li', [
-                    'text' => $entry
+                    'text' => $entry,
                 ]);
             }
         });

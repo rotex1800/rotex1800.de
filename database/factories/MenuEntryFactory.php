@@ -18,9 +18,10 @@ class MenuEntryFactory extends Factory
     {
         return [
             'text' => fake()->word,
-            'href' => '/' . fake()->word . '/' . fake()->word,
+            'path' => '/'.fake()->word.'/'.fake()->word,
             'menu' => 'main',
             'order' => fake()->numberBetween(0, 5),
+            'checksum' => md5(fake()->words(asText: true)),
         ];
     }
 }
