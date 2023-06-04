@@ -32,6 +32,23 @@ it('loads content into database', function () {
     $this->assertDatabaseHas('links', ['path' => 'posts/2014-jhv']);
 });
 
+it('does not create duplicate entries', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->makeDirectory('posts');
+    Storage::disk('content')->put('kalender.md', FileContents::CALENDAR_FILE);
+
+    // Act
+    Artisan::call('content:refresh');
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseCount(Post::class, 1);
+    $this->assertDatabaseCount(Link::class, 1);
+
+    $this->assertDatabaseHas('links', ['path' => 'kalender']);
+});
+
 it('sets post checksum to md5 hash of file', function () {
     // Arrange
     Storage::fake('content');
