@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class MenuEntry extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'path',
+        'menu',
+        'text',
+        'order',
+        'checksum',
+    ];
 }
