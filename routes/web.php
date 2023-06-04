@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect('/home');
-});
-
-Route::get('/home', ContentController::class)->name('home');
+})->name('home');
 
 Route::get('/{link}', ContentController::class)
     ->where('link', '.+');

@@ -3,8 +3,9 @@
 use Sinnbeck\DomAssertions\Asserts\AssertElement;
 use Tests\TestData\FileContents;
 
-test('/home route is named "home"', function () {
-    expect(route('home'))->toEndWith('/home');
+test('route named "home" redirects to "/home"', function () {
+    $this->get(route('home'))
+        ->assertRedirect('/home');
 });
 
 test('Storage facade')
