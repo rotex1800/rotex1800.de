@@ -26,6 +26,7 @@ class ContentController extends Controller
         if ($post == null) {
             abort(404);
         }
+
         return view('home')->with(['content' => $this->markdown->toHtml($post->content)]);
     }
 }

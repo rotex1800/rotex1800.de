@@ -21,7 +21,8 @@ class PostFactory extends Factory
         $content = fake()->text;
         $publishedAt = fake()->dateTime;
 
-        $checksum = md5($title . $content . $publishedAt->getTimestamp());
+        $checksum = md5($title.$content.$publishedAt->getTimestamp());
+
         return [
             'title' => $title,
             'content' => $content,

@@ -11,7 +11,7 @@ class Link extends Model
     use HasFactory;
 
     protected $fillable = [
-        'path'
+        'path',
     ];
 
     public function getRouteKeyName(): string
@@ -22,6 +22,7 @@ class Link extends Model
     public static function fromFilePath(string $path): self
     {
         $sanitized = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
+
         return new Link(['path' => $sanitized]);
     }
 
