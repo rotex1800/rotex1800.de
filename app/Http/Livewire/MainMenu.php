@@ -2,17 +2,25 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\MenuEntry;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
 class MainMenu extends Component
 {
+    public string $menu = 'main';
     /**
-     * @var string[]
+     * @var Collection<MenuEntry>
      */
-    public array $entries = ['Hallo', 'Tschüss'];
+    public Collection $entries;
+
+    public function mount(): void
+    {
+        $this->entries = MenuEntry::whereMenu($this->menu)->get();
+    }
 
     public function render(): View|Factory|Application
     {

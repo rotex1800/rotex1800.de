@@ -1,7 +1,7 @@
 <div>
     <menu>
         @foreach($entries as $entry)
-            <li>{{ $entry }}</li>
+            <li>{{ $entry->text }}</li>
         @endforeach
     </menu>
 </div>
