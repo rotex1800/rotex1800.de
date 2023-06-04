@@ -20,5 +20,5 @@ it('serves markdown file matching the request path', function () {
         ->assertElementExists('h1', function (AssertElement $element) {
             $element->containsText('Rotex 1800');
             $element->doesntContainText('title');
-        });;
+        });
 });

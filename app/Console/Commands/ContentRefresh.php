@@ -37,31 +37,30 @@ class ContentRefresh extends Command
     /**
      * @return array<string>
      */
-    private
-    function findMarkdownFiles(): array
+    private function findMarkdownFiles(): array
     {
         $files = Storage::disk('content')->files(recursive: true);
+
         return array_filter($files, function ($file) {
             return pathinfo($file, PATHINFO_EXTENSION) == 'md';
         });
     }
 
     /**
-     * @param array<string> $markdownFiles
-     * @return void
+     * @param  array<string>  $markdownFiles
      */
     private function deleteOutdatedPosts(array $markdownFiles): void
     {
         $hashes = array_map(function ($file) {
             $path = Storage::disk('content')->path($file);
+
             return md5_file($path);
         }, $markdownFiles);
         Post::whereNotIn('checksum', $hashes)->delete();
     }
 
     /**
-     * @param array<string> $paths
-     * @return void
+     * @param  array<string>  $paths
      */
     private function createPostEntries(array $paths): void
     {

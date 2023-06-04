@@ -17,7 +17,7 @@ class LinkFactory extends Factory
     public function definition(): array
     {
         return [
-            'path' => '/' . fake()->word . '/' . fake()->word
+            'path' => '/'.fake()->word.'/'.fake()->word,
         ];
     }
 }

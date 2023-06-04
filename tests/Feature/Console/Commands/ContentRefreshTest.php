@@ -3,15 +3,15 @@
 use App\Console\Commands\ContentRefresh;
 use App\Models\Link;
 use App\Models\Post;
-use Tests\TestData\FileContents;
 use function Pest\Laravel\assertDatabaseEmpty;
+use Tests\TestData\FileContents;
 
 it('is called using "content:refresh"', function () {
     $availableCommands = Artisan::all();
     expect($availableCommands)
         ->toBeArray()
-        ->toHaveKey("content:refresh")
-        ->and($availableCommands["content:refresh"])
+        ->toHaveKey('content:refresh')
+        ->and($availableCommands['content:refresh'])
         ->toBeInstanceOf(ContentRefresh::class);
 });
 

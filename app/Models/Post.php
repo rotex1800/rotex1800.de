@@ -12,6 +12,7 @@ class Post extends Model
     use HasFactory;
 
     private const FRONTMATTER = 1;
+
     private const CONTENT = 2;
 
     protected $casts = [
@@ -24,7 +25,7 @@ class Post extends Model
 
         $components = explode('---', $hugoFile);
         $content = trim($components[self::CONTENT]);
-        $frontmatter = (array)yaml_parse($components[self::FRONTMATTER]);
+        $frontmatter = (array) yaml_parse($components[self::FRONTMATTER]);
 
         if (array_key_exists('title', $frontmatter)) {
             $post->title = $frontmatter['title'];
@@ -35,6 +36,7 @@ class Post extends Model
         $post->content = $content;
 
         $post->checksum = md5($hugoFile);
+
         return $post;
     }
 
