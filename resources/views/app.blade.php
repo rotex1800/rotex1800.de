@@ -7,10 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rotex 1800 e.V.</title>
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body>
+<livewire:main-menu/>
 <div id="content" class="prose p-4">
 {!! $content !!}
 </div>
+@livewireScripts
 </body>
 </html>

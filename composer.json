@@ -14,11 +14,13 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
+        "livewire/livewire": "^2.12",
         "spatie/laravel-markdown": "^2.3",
         "symfony/yaml": "^6.3"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
+        "christophrumpel/missing-livewire-assertions": "^1.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
