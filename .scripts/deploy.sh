@@ -20,7 +20,7 @@ npm ci --foreground-scripts
 npm run build
 
 # Run database migrations
-#php artisan migrate --force
+php artisan migrate --force
 
 # Run database seeders
 #php artisan db:seed --force
