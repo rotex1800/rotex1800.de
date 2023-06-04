@@ -82,3 +82,26 @@ EOD;
 it('throws exception if given path is null', function () {
     HugoFile::fromPath('non/existent/path.md');
 })->throws(NoFileException::class);
+
+
+it('can return title', function () {
+    $content = <<<'EOD'
+---
+title: Rotex 1800 e.V.
+menu: main
+---
+
+# Willkommen
+Hallo! Wir sind der Rotex 1800 e.V., ein Zusammenschluss ehemaliger
+Teilnehmer:innen des Rotary-Youth-Exchange-Programs.
+
+Erfahren Sie mehr über die Aufgaben des Vereins, unsere Aktivitäten und, was
+unseren Verein so besonders macht.
+
+EOD;
+
+    $file = HugoFile::fromContent($content);
+    expect($file)
+        ->getTitle()->not->toBeNull()
+    ->toBe('Rotex 1800 e.V.');
+});
