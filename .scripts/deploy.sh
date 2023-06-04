@@ -34,6 +34,9 @@ php artisan config:cache
 # Set application key
 php artisan key:generate --force
 
+# Refresh content
+php artisan content:refresh
+
 # Exit maintenance mode
 php artisan up
 
