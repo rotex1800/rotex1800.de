@@ -32,6 +32,28 @@ it('loads content into database', function () {
     $this->assertDatabaseHas('links', ['path' => 'posts/2014-jhv']);
 });
 
+it('creates a relation between post and link', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->makeDirectory('posts');
+    Storage::disk('content')->put('kalender.md', FileContents::CALENDAR_FILE);
+
+    // Act
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseCount(Post::class, 1);
+    $this->assertDatabaseCount(Link::class, 1);
+
+    $post = Post::first();
+    $link = Link::first();
+
+    expect($post->links->first())
+        ->toBeSameEntityAs($link);
+    expect($link->post)
+        ->toBeSameEntityAs($post);
+});
+
 it('does not create duplicate entries', function () {
     // Arrange
     Storage::fake('content');

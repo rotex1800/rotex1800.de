@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Database\Eloquent\Model;
+
 uses(
     Tests\TestCase::class,
     Illuminate\Foundation\Testing\RefreshDatabase::class,
@@ -29,6 +31,12 @@ uses(
 
 expect()->extend('toBeOne', function () {
     return $this->toBe(1);
+});
+
+expect()->extend('toBeSameEntityAs', function (Model $other) {
+    return $this
+        ->toBeInstanceOf(Model::class)
+        ->and($other->is($this->value))->toBeTrue();
 });
 
 /*
