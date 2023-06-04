@@ -43,7 +43,7 @@ class HugoFile
 
     public function getTitle(): string
     {
-        return `{$this->getFrontmatter()['title']}`;
+        return "".$this->getFrontmatter()['title'];
     }
 
     /**

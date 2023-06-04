@@ -1,8 +1,9 @@
 ---
 title: Rotex 1800 e.V.
+menu: main
 ---
 
-# Überschrift
+# Willkommen
 Hallo! Wir sind der Rotex 1800 e.V., ein Zusammenschluss ehemaliger
 Teilnehmer:innen des Rotary-Youth-Exchange-Programs.
 
