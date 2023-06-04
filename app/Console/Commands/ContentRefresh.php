@@ -71,8 +71,10 @@ class ContentRefresh extends Command
                     return;
                 }
                 $post = Post::fromHugo($fileContent);
-                $post->save();
-                $post->links()->save(Link::fromFilePath($path));
+                if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
+                    $post->save();
+                    $post->links()->save(Link::fromFilePath($path));
+                }
             } catch (Exception $exception) {
                 report($exception);
             }
