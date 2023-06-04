@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Symfony\Component\Yaml\Yaml;
 
 class Post extends Model
 {
@@ -25,7 +26,7 @@ class Post extends Model
 
         $components = explode('---', $hugoFile);
         $content = trim($components[self::CONTENT]);
-        $frontmatter = (array) yaml_parse($components[self::FRONTMATTER]);
+        $frontmatter = (array) Yaml::parse($components[self::FRONTMATTER]);
 
         if (array_key_exists('title', $frontmatter)) {
             $post->title = $frontmatter['title'];
