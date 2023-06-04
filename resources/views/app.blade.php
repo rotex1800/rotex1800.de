@@ -8,7 +8,9 @@
     <title>Rotex 1800 e.V.</title>
     @vite('resources/css/app.css')
 </head>
-<body class="prose">
+<body>
+<div id="content" class="prose p-4">
 {!! $content !!}
+</div>
 </body>
 </html>
