@@ -8,6 +8,7 @@ class FileContents
 ---
 slug: /kalender
 title: Kalender
+menu: [main]
 ---
 
 [Die Termine können auch abonniert](https://storage.rotex1800.de/remote.php/dav/public-calendars/St4BEmjY2CqQaqHt?export) werden um sie im Kalender auf dem
@@ -59,6 +60,7 @@ EOD;
 ---
 date: 2014-08-10
 title: JHV 2014
+menu: [main, events]
 categories:
     - Wochenende
 ---

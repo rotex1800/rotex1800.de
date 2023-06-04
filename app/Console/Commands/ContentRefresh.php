@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Link;
+use App\Models\MenuEntries;
+use App\Models\MenuEntry;
 use App\Models\Post;
 use Exception;
 use Illuminate\Console\Command;
@@ -57,6 +59,7 @@ class ContentRefresh extends Command
             return md5_file($path);
         }, $markdownFiles);
         Post::whereNotIn('checksum', $hashes)->delete();
+        MenuEntry::whereNotIn('checksum', $hashes)->delete();
     }
 
     /**
@@ -70,10 +73,16 @@ class ContentRefresh extends Command
                 if ($fileContent == null) {
                     return;
                 }
-                $post = Post::fromHugo($fileContent);
+                $post = Post::fromHugoContent($fileContent);
                 if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
                     $post->save();
                     $post->links()->save(Link::fromFilePath($path));
+                }
+                $menuEntries = MenuEntries::fromFile($path);
+                foreach ($menuEntries as $entry) {
+                    if (MenuEntry::where('checksum', '=', $entry->checksum)->count() == 0) {
+                        $entry->save();
+                    }
                 }
             } catch (Exception $exception) {
                 report($exception);

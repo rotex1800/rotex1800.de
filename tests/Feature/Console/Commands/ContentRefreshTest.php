@@ -2,6 +2,8 @@
 
 use App\Console\Commands\ContentRefresh;
 use App\Models\Link;
+use App\Models\MenuEntries;
+use App\Models\MenuEntry;
 use App\Models\Post;
 use function Pest\Laravel\assertDatabaseEmpty;
 use Tests\TestData\FileContents;
@@ -109,4 +111,42 @@ it('does not create post for empty file', function () {
     // Assert
     assertDatabaseEmpty('posts');
     assertDatabaseEmpty('links');
+});
+
+it('creates menu entries for files with "menu" frontmatter', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->put('kalender.md', FileContents::CALENDAR_FILE);
+
+    // Act
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseCount('menu_entries', 1);
+    $entry = MenuEntry::where('path', '=', 'kalender')->first();
+    expect($entry)
+        ->not->toBeNull()
+        ->checksum->toBe(md5_file(Storage::disk('content')->path('kalender.md')));
+});
+
+it('removes outdated menu entries', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->put('kalender.md', FileContents::CALENDAR_FILE);
+    $entries = MenuEntries::fromFile('kalender.md');
+    foreach ($entries as $entry) {
+        $entry->save();
+    }
+    MenuEntry::factory()->create();
+    $this->assertDatabaseCount('menu_entries', 2);
+
+    // Act
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseCount('menu_entries', 1);
+    $entry = MenuEntry::where('path', '=', 'kalender')->first();
+    expect($entry)
+        ->not->toBeNull()
+        ->path->toBe('kalender');
 });

@@ -34,7 +34,7 @@ title: JHV 2014
 Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
 Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
 EOD;
-    $post = Post::fromHugo($fileContent);
+    $post = Post::fromHugoContent($fileContent);
 
     expect($post)
         ->content->toBe('Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
@@ -53,7 +53,7 @@ unknown-key: and-value
 Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
 Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
 EOD;
-    $post = Post::fromHugo($fileContent);
+    $post = Post::fromHugoContent($fileContent);
     expect($post)->toBeInstanceOf(Post::class);
 });
 
@@ -67,7 +67,7 @@ unknown-key: and-value
 Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
 Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
 EOD;
-    $post = Post::fromHugo($fileContent);
+    $post = Post::fromHugoContent($fileContent);
     expect($post)
         ->checksum->toBeString();
 });
@@ -80,7 +80,7 @@ title: JHV 2014
 Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
 Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
 EOD;
-    $post = Post::fromHugo($fileContent);
+    $post = Post::fromHugoContent($fileContent);
     expect($post)
         ->published_at->toBeNull();
 });
@@ -93,7 +93,7 @@ date: 2023-06-09
 Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
 Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
 EOD;
-    $post = Post::fromHugo($fileContent);
+    $post = Post::fromHugoContent($fileContent);
     expect($post)
         ->title->toBeNull();
 });

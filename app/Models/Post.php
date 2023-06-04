@@ -6,15 +6,10 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Symfony\Component\Yaml\Yaml;
 
 class Post extends Model
 {
     use HasFactory;
-
-    private const FRONTMATTER = 1;
-
-    private const CONTENT = 2;
 
     protected $casts = [
         'published_at' => 'datetime',
@@ -27,14 +22,13 @@ class Post extends Model
         });
     }
 
-    public static function fromHugo(string $hugoFile): Post
+    public static function fromHugoContent(string $fileContent): Post
     {
+        $file = HugoFile::fromContent($fileContent);
+        $content = $file->getContent();
+        $frontmatter = $file->getFrontmatter();
+
         $post = new Post();
-
-        $components = explode('---', $hugoFile);
-        $content = trim($components[self::CONTENT]);
-        $frontmatter = (array) Yaml::parse($components[self::FRONTMATTER]);
-
         if (array_key_exists('title', $frontmatter)) {
             $post->title = $frontmatter['title'];
         }
@@ -42,8 +36,7 @@ class Post extends Model
             $post->published_at = Carbon::parse($frontmatter['date']);
         }
         $post->content = $content;
-
-        $post->checksum = md5($hugoFile);
+        $post->checksum = md5($fileContent);
 
         return $post;
     }

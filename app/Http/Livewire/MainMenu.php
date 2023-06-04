@@ -9,7 +9,6 @@ use Livewire\Component;
 
 class MainMenu extends Component
 {
-
     /**
      * @var string[]
      */
@@ -18,7 +17,7 @@ class MainMenu extends Component
     public function render(): View|Factory|Application
     {
         return view('livewire.main-menu', [
-            'entries' => $this->entries
+            'entries' => $this->entries,
         ]);
     }
 }
