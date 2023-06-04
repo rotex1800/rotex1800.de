@@ -120,3 +120,17 @@ it('has many links', function () {
         ->toHaveCount(2)
         ->first()->toBeInstanceOf(Link::class);
 });
+
+it('deletes related links upon deletion', function () {
+    // Arrange
+    $post = Post::factory()
+        ->hasLinks(2)
+        ->create();
+    $this->assertDatabaseCount('links', 2);
+
+    // Act
+    $post->delete();
+
+    // Assert
+    $this->assertDatabaseCount('links', 0);
+});

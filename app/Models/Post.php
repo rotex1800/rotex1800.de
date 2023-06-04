@@ -20,6 +20,13 @@ class Post extends Model
         'published_at' => 'datetime',
     ];
 
+    protected static function booted()
+    {
+        static::deleting(function (Post $post) {
+            $post->links()->delete();
+        });
+    }
+
     public static function fromHugo(string $hugoFile): Post
     {
         $post = new Post();
