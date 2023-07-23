@@ -5,8 +5,8 @@ use App\Models\Link;
 use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
-use function Pest\Laravel\assertDatabaseEmpty;
 use Tests\TestData\FileContents;
+use function Pest\Laravel\assertDatabaseEmpty;
 
 it('is called using "content:refresh"', function () {
     $availableCommands = Artisan::all();
@@ -64,6 +64,24 @@ it('does not create duplicate entries', function () {
 
     // Act
     Artisan::call('content:refresh');
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseCount(Post::class, 1);
+    $this->assertDatabaseCount(Link::class, 1);
+
+    $this->assertDatabaseHas('links', ['path' => 'kalender']);
+});
+
+it('does not create duplicate links after renaming title', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->makeDirectory('posts');
+    Storage::disk('content')->put('kalender.md', FileContents::EXAMPLE);
+
+    // Act
+    Artisan::call('content:refresh');
+    Storage::disk('content')->put('kalender.md', FileContents::RENAMED_EXAMPLE);
     Artisan::call('content:refresh');
 
     // Assert

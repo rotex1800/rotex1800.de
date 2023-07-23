@@ -120,4 +120,13 @@ title: Example
 
 This is a markdown file read from disk!
 EOD;
+
+    const RENAMED_EXAMPLE = <<<'EOD'
+---
+title: Second Example
+---
+# Hello Rotex 1800
+
+This is a markdown file read from disk!
+EOD;
 }
