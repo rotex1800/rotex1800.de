@@ -115,15 +115,17 @@ EOD;
     const EXAMPLE = <<<'EOD'
 ---
 title: Example
+date: 2014-08-10
 ---
 # Hello Rotex 1800
 
 This is a markdown file read from disk!
 EOD;
 
-    const RENAMED_EXAMPLE = <<<'EOD'
+    const EXAMPLE_CHANGED_TITLE = <<<'EOD'
 ---
 title: Second Example
+date: 2014-08-10
 ---
 # Hello Rotex 1800
 

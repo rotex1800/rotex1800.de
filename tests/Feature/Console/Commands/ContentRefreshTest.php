@@ -73,7 +73,7 @@ it('does not create duplicate entries', function () {
     $this->assertDatabaseHas('links', ['path' => 'kalender']);
 });
 
-it('does not create duplicate links after renaming title', function () {
+it('does not create duplicate links after changing title', function () {
     // Arrange
     Storage::fake('content');
     Storage::disk('content')->makeDirectory('posts');
@@ -81,7 +81,7 @@ it('does not create duplicate links after renaming title', function () {
 
     // Act
     Artisan::call('content:refresh');
-    Storage::disk('content')->put('kalender.md', FileContents::RENAMED_EXAMPLE);
+    Storage::disk('content')->put('kalender.md', FileContents::EXAMPLE_CHANGED_TITLE);
     Artisan::call('content:refresh');
 
     // Assert
