@@ -76,7 +76,12 @@ class ContentRefresh extends Command
                 $post = Post::fromHugoContent($fileContent);
                 if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
                     $post->save();
-                    $post->links()->save(Link::fromFilePath($path));
+                    $linkFromFile = Link::fromFilePath($path);
+                    if (Link::where('path', '=', $linkFromFile->path)->count() > 0) {
+                        $post->links = array($linkFromFile);
+                    } else {
+                        $post->links()->save($linkFromFile);
+                    }
                 }
                 $menuEntries = MenuEntries::fromFile($path);
                 foreach ($menuEntries as $entry) {
