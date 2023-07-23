@@ -78,7 +78,7 @@ class ContentRefresh extends Command
                     $post->save();
                     $linkFromFile = Link::fromFilePath($path);
                     if (Link::where('path', '=', $linkFromFile->path)->count() > 0) {
-                        $post->links = array($linkFromFile);
+                        $post->links = [$linkFromFile];
                     } else {
                         $post->links()->save($linkFromFile);
                     }

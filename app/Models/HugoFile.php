@@ -28,6 +28,7 @@ class HugoFile
         if ($content == null) {
             throw new NoFileException();
         }
+
         return new HugoFile($content);
     }
 
@@ -43,7 +44,7 @@ class HugoFile
 
     public function getTitle(): string
     {
-        return "".$this->getFrontmatter()['title'];
+        return ''.$this->getFrontmatter()['title'];
     }
 
     /**
