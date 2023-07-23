@@ -12,6 +12,7 @@ use Livewire\Component;
 class MainMenu extends Component
 {
     public string $menu = 'main';
+
     /**
      * @var Collection<MenuEntry>
      */

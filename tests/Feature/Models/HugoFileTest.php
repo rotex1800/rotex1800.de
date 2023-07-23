@@ -83,7 +83,6 @@ it('throws exception if given path is null', function () {
     HugoFile::fromPath('non/existent/path.md');
 })->throws(NoFileException::class);
 
-
 it('can return title', function () {
     $content = <<<'EOD'
 ---
@@ -103,5 +102,5 @@ EOD;
     $file = HugoFile::fromContent($content);
     expect($file)
         ->getTitle()->not->toBeNull()
-    ->toBe('Rotex 1800 e.V.');
+        ->toBe('Rotex 1800 e.V.');
 });

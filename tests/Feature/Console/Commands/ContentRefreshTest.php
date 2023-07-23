@@ -5,8 +5,8 @@ use App\Models\Link;
 use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
-use Tests\TestData\FileContents;
 use function Pest\Laravel\assertDatabaseEmpty;
+use Tests\TestData\FileContents;
 
 it('is called using "content:refresh"', function () {
     $availableCommands = Artisan::all();
