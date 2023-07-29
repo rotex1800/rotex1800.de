@@ -16,11 +16,11 @@ it('contains top level entries with given strings', function () {
     $entries = MenuEntry::factory()
         ->count(4)
         ->create();
-    Livewire::test(MainMenu::class)
-        ->assertStatus(200)
+    Livewire::test(MainMenu::class)->assertStatus(200)
         ->assertElementExists('menu', function (AssertElement $element) use ($entries) {
             foreach ($entries as $entry) {
                 $element->contains('li', ['text' => $entry->text]);
+                $element->contains('li > a', ['href' => url($entry->path)]);
             }
         });
 });
