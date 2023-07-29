@@ -19,6 +19,7 @@ it('contains top level entries with given strings', function () {
     Livewire::test(MainMenu::class)->assertStatus(200)
         ->assertElementExists('nav', function (AssertElement $element) use ($entries) {
             foreach ($entries as $entry) {
+                $element->contains('nav > ul', ['class' => 'flex-col md:flex-row flex']);
                 $element->contains('nav > ul > li', ['text' => $entry->text]);
                 $element->contains('nav > ul > li > a', ['href' => url($entry->path)]);
             }
