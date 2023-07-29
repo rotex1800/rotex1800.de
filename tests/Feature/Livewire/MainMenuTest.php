@@ -17,10 +17,10 @@ it('contains top level entries with given strings', function () {
         ->count(4)
         ->create();
     Livewire::test(MainMenu::class)->assertStatus(200)
-        ->assertElementExists('menu', function (AssertElement $element) use ($entries) {
+        ->assertElementExists('nav', function (AssertElement $element) use ($entries) {
             foreach ($entries as $entry) {
-                $element->contains('li', ['text' => $entry->text]);
-                $element->contains('li > a', ['href' => url($entry->path)]);
+                $element->contains('nav > ul > li', ['text' => $entry->text]);
+                $element->contains('nav > ul > li > a', ['href' => url($entry->path)]);
             }
         });
 });
