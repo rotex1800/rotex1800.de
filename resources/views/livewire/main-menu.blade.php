@@ -1,7 +1,9 @@
 <div>
-    <menu>
-        @foreach($entries as $entry)
-            <li><a href={{ url($entry->path) }}>{{ $entry->text }}</a></li>
-        @endforeach
-    </menu>
+    <nav class="bg-blue-500">
+        <ul>
+            @foreach($entries as $entry)
+                <li class="text-white text-lg block w-fit p-2 hover:underline transition-all duration-200 ease-in-out"><a href={{ url($entry->path) }}>{{ $entry->text }}</a></li>
+            @endforeach
+        </ul>
+    </nav>
 </div>
