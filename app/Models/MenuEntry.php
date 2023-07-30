@@ -19,6 +19,6 @@ class MenuEntry extends Model
 
     public function matches(string $string): bool
     {
-        return preg_match("^" . $this->path . "^", $string) != false;
+        return preg_match('^'.$this->path.'^', $string) != false;
     }
 }
