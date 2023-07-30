@@ -87,3 +87,15 @@ it('returns empty array for no file at given path', function () {
         ->toBeArray()
         ->toBeEmpty();
 });
+
+it('returns true when it matches the given path', function () {
+    $entry = MenuEntry::factory()->state(['path' => '/path'])->create();
+    expect($entry->matches('/path'))
+        ->toBeTrue();
+});
+
+it('returns false when it does not match the given path', function () {
+    $entry = MenuEntry::factory()->state(['path' => '/path'])->create();
+    expect($entry->matches('/other'))
+        ->toBeFalse();
+});
