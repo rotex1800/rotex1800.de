@@ -77,11 +77,8 @@ class ContentRefresh extends Command
                 if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
                     $post->save();
                     $linkFromFile = Link::fromFilePath($path);
-                    if (Link::where('path', '=', $linkFromFile->path)->count() > 0) {
-                        $post->links = [$linkFromFile];
-                    } else {
-                        $post->links()->save($linkFromFile);
-                    }
+                    Link::where('path', '=', $linkFromFile->path)->delete();
+                    $post->links()->save($linkFromFile);
                 }
                 $menuEntries = MenuEntries::fromFile($path);
                 foreach ($menuEntries as $entry) {
