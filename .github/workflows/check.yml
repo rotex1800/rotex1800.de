@@ -57,7 +57,7 @@ jobs:
         run: >
           vendor/bin/pest --ci
           --log-junit junit-report.xml
-          --coverage --coverage-clover coverage-report.xml --min=50
+          --coverage --coverage-clover coverage-report.xml --min=85
 
       - name: Report Coverage in comment
         uses: lucassabreu/comment-coverage-clover@v0.9.2
