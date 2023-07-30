@@ -27,6 +27,9 @@ class ContentController extends Controller
             abort(404);
         }
 
-        return view('app')->with(['content' => $this->markdown->toHtml($post->content)]);
+        return view('app')->with([
+            'content' => $this->markdown->toHtml($post->content),
+            'path' => $link->path
+        ]);
     }
 }
