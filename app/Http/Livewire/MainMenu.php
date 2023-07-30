@@ -12,6 +12,7 @@ use Livewire\Component;
 class MainMenu extends Component
 {
     public string $menu = 'main';
+    public string $currentPath;
 
     /**
      * @var Collection<MenuEntry>
@@ -27,6 +28,7 @@ class MainMenu extends Component
     {
         return view('livewire.main-menu', [
             'entries' => $this->entries,
+            'currentPath' => $this->currentPath,
         ]);
     }
 }

@@ -8,7 +8,9 @@ use Livewire\Livewire;
 use Sinnbeck\DomAssertions\Asserts\AssertElement;
 
 it('can render MainMenu', function () {
-    Livewire::test(MainMenu::class)
+    Livewire::test(MainMenu::class, [
+        'currentPath' => '/path'
+    ])
         ->assertStatus(200);
 });
 
@@ -16,7 +18,7 @@ it('contains top level entries with given strings', function () {
     $entries = MenuEntry::factory()
         ->count(4)
         ->create();
-    Livewire::test(MainMenu::class)->assertStatus(200)
+    Livewire::test(MainMenu::class,['currentPath' => '/path'])->assertStatus(200)
         ->assertElementExists('nav', function (AssertElement $element) use ($entries) {
             foreach ($entries as $entry) {
                 $element->contains('nav > ul', ['class' => 'flex-col md:flex-row flex']);

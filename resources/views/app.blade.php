@@ -10,7 +10,7 @@
     @livewireStyles
 </head>
 <body>
-<livewire:main-menu/>
+<livewire:main-menu current-path="{{ $path }}"/>
 <div id="content" class="prose p-4">
 {!! $content !!}
 </div>
