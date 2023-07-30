@@ -16,4 +16,9 @@ class MenuEntry extends Model
         'order',
         'checksum',
     ];
+
+    public function matches(string $string): bool
+    {
+        return preg_match("^" . $this->path . "^", $string) != false;
+    }
 }
