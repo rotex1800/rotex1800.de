@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.3](https://github.com/rotex1800/rotex1800.de/compare/v0.1.2...v0.1.3) (2023-07-31)
+
+
+### Features
+
+* highlight current item in menu ([74833d5](https://github.com/rotex1800/rotex1800.de/commit/74833d5ed0a0a2aa98d80e7ed28532a9da05feda))
+
+
+### Bug Fixes
+
+* Ensure no duplicate links after content refresh with changed title ([eb9cadf](https://github.com/rotex1800/rotex1800.de/commit/eb9cadf8a0a70b9ed0c54d7fbc2d734fe0a5eebb))
+* use link in menu ([d797d79](https://github.com/rotex1800/rotex1800.de/commit/d797d79e1f079eb5fb76772a74a2c4ad62a6e4d9))
+
+
+### Miscellaneous Chores
+
+* Arrange menu items depending on space ([d7e64c8](https://github.com/rotex1800/rotex1800.de/commit/d7e64c88436d84808d5d33891b7d2330e7910ff0))
+* require at least 85 percent coverage ([94c39e5](https://github.com/rotex1800/rotex1800.de/commit/94c39e56c818895b7cae1685057ed830bb92c34a))
+* Update main menu to use nav element and improve styling ([8e52f51](https://github.com/rotex1800/rotex1800.de/commit/8e52f51daec5fb7c0efa5e88d9a02fcf15e15588))
+
 ## [0.1.2](https://github.com/rotex1800/rotex1800.de/compare/v0.1.1...v0.1.2) (2023-06-04)
 
 
