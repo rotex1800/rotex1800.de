@@ -15,10 +15,10 @@ it('belongs to one post', function () {
 it('has path', function () {
     $link = Link::factory()
         ->for(Post::factory())
-        ->create(['path' => '/path']);
+        ->create(['path' => 'path']);
     expect($link)
         ->path->toBeString()
-        ->path->toBe('/path');
+        ->path->toBe('path');
 });
 
 test('has index on path column', function () {
@@ -31,10 +31,19 @@ test('has index on path column', function () {
 it('can be created from file path', function () {
     $link = Link::fromFilePath('/posts/über-uns.md');
     expect($link->path)
-        ->toBe('/posts/über-uns');
+        ->toBe('posts/über-uns');
 });
 
-it('uses path as route key name', function () {
-    expect(Link::factory()->make())
-        ->getRouteKeyName()->toBe('path');
+it('uses directory root for _index.md files', function () {
+    $link = Link::fromFilePath('/posts/_index.md');
+
+    expect($link)
+        ->path->toBe('posts');
+});
+
+it('uses / for _index in root', function () {
+    $link = Link::fromFilePath('_index.md');
+
+    expect($link)
+        ->path->toBe('/');
 });
