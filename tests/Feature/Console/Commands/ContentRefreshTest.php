@@ -5,8 +5,9 @@ use App\Models\Link;
 use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
-use function Pest\Laravel\assertDatabaseEmpty;
 use Tests\TestData\FileContents;
+use function Pest\Laravel\assertDatabaseEmpty;
+use function Pest\Laravel\assertDatabaseHas;
 
 it('is called using "content:refresh"', function () {
     $availableCommands = Artisan::all();
@@ -36,6 +37,21 @@ it('loads content into database', function () {
     $this->assertDatabaseHas('links', ['path' => 'posts/2014-jhv']);
     $this->assertDatabaseHas('links', ['path' => '/']);
     $this->assertDatabaseHas('links', ['path' => 'legal']);
+
+    assertDatabaseHas('menu_entries',
+        [
+            'path' => 'kalender',
+            'menu' => 'main'
+        ]);
+    assertDatabaseHas('menu_entries',
+        [
+            'path' => 'posts/2014-jhv',
+            'menu' => 'main'
+        ]);
+    assertDatabaseHas('menu_entries',
+        [
+            'path' => '/',
+        ]);
 });
 
 it('creates a relation between post and link', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils;
 use Illuminate\Support\Facades\Storage;
 
 class MenuEntries
@@ -19,7 +20,7 @@ class MenuEntries
         $hugoHelper = HugoFile::fromContent($fileContent);
         $menus = $hugoHelper->getMenus();
         $entries = [];
-        $sanitizedPath = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
+        $sanitizedPath = Utils::sanitizePath($path);
 
         foreach ($menus as $menu) {
             $entries[] = new MenuEntry([
