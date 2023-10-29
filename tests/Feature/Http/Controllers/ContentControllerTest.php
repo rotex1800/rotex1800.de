@@ -14,7 +14,7 @@ it('serves markdown file matching the request path', function () {
     $this->get('/example')
         ->assertStatus(200)
         ->assertElementExists('h1', function (AssertElement $element) {
-            $element->containsText('Rotex 1800');
+            $element->containsText('Example');
             $element->doesntContainText('title');
         });
 });
@@ -27,9 +27,6 @@ it('serves _index file when accessing the root', function () {
         ->assertStatus(200)
         ->assertElementExists('h1', function (AssertElement $element) {
             $element->containsText('Example');
-        })
-        ->assertElementExists('h1', function (AssertElement $element) {
-            $element->containsText('Hello Rotex 1800');
             $element->doesntContainText('title');
         });
 });
@@ -42,7 +39,18 @@ it('serves _index file when accessing a directory', function () {
     $this->get('/legal/')
         ->assertStatus(200)
         ->assertElementExists('h1', function (AssertElement $element) {
-            $element->containsText('Hello Rotex 1800');
+            $element->containsText('Example');
             $element->doesntContainText('title');
         });
+});
+
+it('does not crash on missing frontmatter title', function () {
+    Storage::fake('content');
+    Storage::disk('content')->put('legal/_index.md', FileContents::NO_TITLE);
+    Artisan::call('content:refresh');
+
+    $this->get('/legal/')
+        ->assertStatus(200)
+        ->assertDontSee('<h1>', escape: false)
+        ;
 });
