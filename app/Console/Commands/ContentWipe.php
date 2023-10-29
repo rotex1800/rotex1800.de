@@ -26,7 +26,7 @@ class ContentWipe extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $this->choice('Do you really want to delete all content?', ['no', 'yes']);
 
