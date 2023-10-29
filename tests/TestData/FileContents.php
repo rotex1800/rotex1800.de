@@ -132,4 +132,11 @@ date: 2014-08-10
 
 This is a markdown file read from disk!
 EOD;
+
+    const NO_TITLE = <<<'EOD'
+---
+date: 2014-08-10
+---
+This file has no title
+EOD;
 }
