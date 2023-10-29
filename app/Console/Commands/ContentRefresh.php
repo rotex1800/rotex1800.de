@@ -67,7 +67,8 @@ class ContentRefresh extends Command
      */
     private function createPostEntries(array $paths): void
     {
-        array_map(function ($path) {
+            $this->info('Creating posts...');
+            $this->withProgressBar($paths, function ($path) {
             try {
                 $fileContent = Storage::disk('content')->get($path);
                 if ($fileContent == null) {
@@ -89,6 +90,6 @@ class ContentRefresh extends Command
             } catch (Exception $exception) {
                 report($exception);
             }
-        }, $paths);
+        });
     }
 }
