@@ -24,14 +24,18 @@ it('loads content into database', function () {
 
     Storage::disk('content')->put('kalender.md', FileContents::CALENDAR_FILE);
     Storage::disk('content')->put('posts/2014-jhv.md', FileContents::JHV_POST);
+    Storage::disk('content')->put('_index.md', FileContents::EXAMPLE);
+    Storage::disk('content')->put('legal/_index.md', FileContents::EXAMPLE_CHANGED_TITLE);
 
     Artisan::call('content:refresh');
 
-    $this->assertDatabaseCount(Post::class, 2);
-    $this->assertDatabaseCount(Link::class, 2);
+    $this->assertDatabaseCount(Post::class, 4);
+    $this->assertDatabaseCount(Link::class, 4);
 
     $this->assertDatabaseHas('links', ['path' => 'kalender']);
     $this->assertDatabaseHas('links', ['path' => 'posts/2014-jhv']);
+    $this->assertDatabaseHas('links', ['path' => '/']);
+    $this->assertDatabaseHas('links', ['path' => 'legal']);
 });
 
 it('creates a relation between post and link', function () {

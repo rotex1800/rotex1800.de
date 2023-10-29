@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  *
  * @mixin \Eloquent
  */
-class Link extends Model
+class Link extends Model implements HasPath
 {
     use HasFactory;
 
@@ -36,15 +36,16 @@ class Link extends Model
         'path',
     ];
 
-    public function getRouteKeyName(): string
-    {
-        return 'path';
-    }
-
     public static function fromFilePath(string $path): self
     {
-        $sanitized = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
+        $noMdFileExtension = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
+        $noIndex = preg_replace('/_index$/', '', $noMdFileExtension);
+        $noStartingSlash = preg_replace('/^\\//', '', $noIndex);
 
+        $sanitized = preg_replace('/\\/$/', '', $noStartingSlash);
+        if ($sanitized == '') {
+            $sanitized = '/';
+        }
         return new Link(['path' => $sanitized]);
     }
 
@@ -52,4 +53,11 @@ class Link extends Model
     {
         return $this->belongsTo(Post::class);
     }
+
+    public function path(): string
+    {
+        return $this->path;
+    }
+
+
 }

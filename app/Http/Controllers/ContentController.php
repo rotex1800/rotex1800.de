@@ -17,11 +17,32 @@ class ContentController extends Controller
         $this->markdown = app(MarkdownRenderer::class);
     }
 
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request, Link $link): Factory|View
+    public function root(): View
     {
+        $link = Link::where('path', '=', '/')->first();
+        return $this->serve($link);
+    }
+
+    /**
+     * Handle the incoming request on arbitrary path.
+     */
+    public function path(Request $request): Factory|View
+    {
+        $link = Link::where('path', '=', $request->path())->first();
+
+        return $this->serve($link);
+    }
+
+    /**
+     * @param Link $link
+     * @return View
+     */
+    private function serve(?Link $link): View
+    {
+        if ($link == null) {
+            abort(404);
+        }
+
         $post = $link->post;
         if ($post == null) {
             abort(404);
