@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.1.4](https://github.com/rotex1800/rotex1800.de/compare/v0.1.3...v0.1.4) (2023-10-29)
+
+
+### Features
+
+* Add command to wipe all content ([db4852b](https://github.com/rotex1800/rotex1800.de/commit/db4852b3d0105e991964bc92f5d83912f83047dc))
+* Add content ([3776dba](https://github.com/rotex1800/rotex1800.de/commit/3776dba6cd7102da67b47776a573e2c440e239bf))
+* Serve _index files ([dab9c9c](https://github.com/rotex1800/rotex1800.de/commit/dab9c9c8a460f8f9a756b6dbdf78086d23a91710))
+
+
+### Miscellaneous Chores
+
+* Center content horizontally ([b03048c](https://github.com/rotex1800/rotex1800.de/commit/b03048cfe72d0a6cda0357c3f546978a609ca40d))
+* Handle missing title ([84a2259](https://github.com/rotex1800/rotex1800.de/commit/84a225958aa178c7bffb3b4c2b95190fa80013a1))
+* Show frontmatter title on page ([39452ab](https://github.com/rotex1800/rotex1800.de/commit/39452ab4051c91c3286b03abba1a423b3e61e7ff))
+* Use extracted path sanitization for menus ([e208c2c](https://github.com/rotex1800/rotex1800.de/commit/e208c2cc146d6dacc5134b67288317c55748d613))
+
 ## [0.1.3](https://github.com/rotex1800/rotex1800.de/compare/v0.1.2...v0.1.3) (2023-07-31)
 
 
