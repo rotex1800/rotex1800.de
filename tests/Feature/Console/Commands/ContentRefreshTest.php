@@ -5,9 +5,9 @@ use App\Models\Link;
 use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
-use Tests\TestData\FileContents;
 use function Pest\Laravel\assertDatabaseEmpty;
 use function Pest\Laravel\assertDatabaseHas;
+use Tests\TestData\FileContents;
 
 it('is called using "content:refresh"', function () {
     $availableCommands = Artisan::all();
@@ -41,12 +41,12 @@ it('loads content into database', function () {
     assertDatabaseHas('menu_entries',
         [
             'path' => 'kalender',
-            'menu' => 'main'
+            'menu' => 'main',
         ]);
     assertDatabaseHas('menu_entries',
         [
             'path' => 'posts/2014-jhv',
-            'menu' => 'main'
+            'menu' => 'main',
         ]);
     assertDatabaseHas('menu_entries',
         [

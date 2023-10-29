@@ -20,6 +20,7 @@ class ContentController extends Controller
     public function root(): View
     {
         $link = Link::where('path', '=', '/')->first();
+
         return $this->serve($link);
     }
 
@@ -34,8 +35,7 @@ class ContentController extends Controller
     }
 
     /**
-     * @param Link $link
-     * @return View
+     * @param  Link  $link
      */
     private function serve(?Link $link): View
     {

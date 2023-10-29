@@ -51,6 +51,5 @@ it('does not crash on missing frontmatter title', function () {
 
     $this->get('/legal/')
         ->assertStatus(200)
-        ->assertDontSee('<h1>', escape: false)
-        ;
+        ->assertDontSee('<h1>', escape: false);
 });

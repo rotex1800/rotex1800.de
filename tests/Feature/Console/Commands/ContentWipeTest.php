@@ -32,7 +32,7 @@ it('removes all posts and links from database', function () {
             'yes',
             ['no', 'yes']
         )
-    ->assertExitCode(0);
+        ->assertExitCode(0);
 
     assertDatabaseCount('posts', 0);
     assertDatabaseCount('links', 0);

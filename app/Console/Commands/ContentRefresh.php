@@ -67,8 +67,8 @@ class ContentRefresh extends Command
      */
     private function createPostEntries(array $paths): void
     {
-            $this->info('Creating posts...');
-            $this->withProgressBar($paths, function ($path) {
+        $this->info('Creating posts...');
+        $this->withProgressBar($paths, function ($path) {
             try {
                 $fileContent = Storage::disk('content')->get($path);
                 if ($fileContent == null) {
