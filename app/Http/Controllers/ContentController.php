@@ -51,6 +51,7 @@ class ContentController extends Controller
         return view('app')->with([
             'content' => $this->markdown->toHtml($post->content),
             'path' => $link->path,
+            'title' => $post->title,
         ]);
     }
 }

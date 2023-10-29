@@ -26,6 +26,9 @@ it('serves _index file when accessing the root', function () {
     $this->get('/')
         ->assertStatus(200)
         ->assertElementExists('h1', function (AssertElement $element) {
+            $element->containsText('Example');
+        })
+        ->assertElementExists('h1', function (AssertElement $element) {
             $element->containsText('Hello Rotex 1800');
             $element->doesntContainText('title');
         });
