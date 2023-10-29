@@ -40,6 +40,7 @@ class Link extends Model implements HasPath
     public static function fromFilePath(string $path): self
     {
         $sanitized = Utils::sanitizePath($path);
+
         return new Link(['path' => $sanitized]);
     }
 
@@ -52,6 +53,4 @@ class Link extends Model implements HasPath
     {
         return $this->path;
     }
-
-
 }

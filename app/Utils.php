@@ -4,7 +4,6 @@ namespace App;
 
 class Utils
 {
-
     public static function sanitizePath(string $path): string
     {
         $noMdFileExtension = (string) preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
@@ -15,6 +14,7 @@ class Utils
         if ($sanitized == '') {
             $sanitized = '/';
         }
+
         return $sanitized;
     }
 }
