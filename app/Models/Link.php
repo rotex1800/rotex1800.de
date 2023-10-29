@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utils;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -38,14 +39,7 @@ class Link extends Model implements HasPath
 
     public static function fromFilePath(string $path): self
     {
-        $noMdFileExtension = preg_replace(pattern: '/\\.md$/', replacement: '', subject: $path);
-        $noIndex = preg_replace('/_index$/', '', $noMdFileExtension);
-        $noStartingSlash = preg_replace('/^\\//', '', $noIndex);
-
-        $sanitized = preg_replace('/\\/$/', '', $noStartingSlash);
-        if ($sanitized == '') {
-            $sanitized = '/';
-        }
+        $sanitized = Utils::sanitizePath($path);
         return new Link(['path' => $sanitized]);
     }
 
