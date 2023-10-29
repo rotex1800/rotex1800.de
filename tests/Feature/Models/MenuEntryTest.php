@@ -51,7 +51,7 @@ EOD;
     expect($entries)
         ->toBeArray()
         ->and($entries[0])
-        ->path->toBe('/example/path')
+        ->path->toBe('example/path')
         ->menu->toBe('main')
         ->text->toBe('JHV 2014')
         ->order->toBeOne();
