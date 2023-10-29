@@ -11,7 +11,7 @@
 </head>
 <body>
 <livewire:main-menu current-path="{{ $path }}"/>
-<div id="content" class="prose p-4">
+<div id="content" class="prose p-4 m-auto">
     <h1>{{ $title }}</h1>
     {!! $content !!}
 </div>
