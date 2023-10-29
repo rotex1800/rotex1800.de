@@ -155,6 +155,7 @@ jobs:
         with:
           github_token: '${{ github.token }}'
           level: 'error'
+          phpstan_level: 'max'
           fail_on_error: 'true'
           target_directory: 'app'
 
