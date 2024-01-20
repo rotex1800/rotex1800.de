@@ -34,7 +34,7 @@
 * Fix test setup ([7ebe58d](https://github.com/rotex1800/rotex1800.de/commit/7ebe58d13bc9b2ed0253066e975cd491d762d754))
 * Migrate to Livewire 3 ([df2ef8b](https://github.com/rotex1800/rotex1800.de/commit/df2ef8b0b214fecb13d70fa846c6fc454f4ea068))
 * Remove PR edited trigger from check workflow ([7e37742](https://github.com/rotex1800/rotex1800.de/commit/7e3774285612da2787f01f78d8d654a43dd86ee8))
-* Replease please adjustments ([b9ab0b6](https://github.com/rotex1800/rotex1800.de/commit/b9ab0b6600a7955249bc4a80cfa0fc51709a8dc9))
+* Release please adjustments ([b9ab0b6](https://github.com/rotex1800/rotex1800.de/commit/b9ab0b6600a7955249bc4a80cfa0fc51709a8dc9))
 
 ## [0.1.4](https://github.com/rotex1800/rotex1800.de/compare/v0.1.3...v0.1.4) (2023-10-29)
 
