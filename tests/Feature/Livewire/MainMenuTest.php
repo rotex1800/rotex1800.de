@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Livewire;
 
-use App\Http\Livewire\MainMenu;
+use App\Livewire\MainMenu;
 use App\Models\MenuEntry;
 use Livewire\Livewire;
 use Sinnbeck\DomAssertions\Asserts\AssertElement;
