@@ -20,7 +20,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
-        "christophrumpel/missing-livewire-assertions": "^1.0",
+        "christophrumpel/missing-livewire-assertions": "^v2.3.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
