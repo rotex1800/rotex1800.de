@@ -111,9 +111,7 @@ it('has many links', function () {
     $post = Post::factory()
         ->has(Link::factory()->count(2))
         ->create();
-    expect($post)
-        ->toHaveMethod('links')
-        ->and($post->links())
+    expect($post->links())
         ->toBeInstanceOf(HasMany::class)
         ->and($post->links)
         ->toBeCollection()

@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 it('belongs to one post', function () {
     $link = new Link();
-    expect($link)
-        ->toHaveMethod('post')
-        ->and($link->post())
+    expect($link->post())
         ->toBeInstanceOf(BelongsTo::class);
 });
 
