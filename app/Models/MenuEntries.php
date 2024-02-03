@@ -40,9 +40,7 @@ class MenuEntries
     }
 
     /**
-     * @param string|array<string> $menu
-     * @param string $path
-     * @return int|null
+     * @param  string|array<string>  $menu
      */
     private static function determineOrder(string|array $menu, string $path): ?int
     {
