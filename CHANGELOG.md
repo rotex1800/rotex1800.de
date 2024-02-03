@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.2.0](https://github.com/rotex1800/rotex1800.de/compare/v0.1.5...v0.2.0) (2024-02-03)
+
+
+### Features
+
+* Read MenuEntry order from frontmatter ([c32dadf](https://github.com/rotex1800/rotex1800.de/commit/c32dadf505444ca33f03a32a9f9a07bd9cb67d34))
+* Respect MenuEntry order in MainMenu ([1e8279c](https://github.com/rotex1800/rotex1800.de/commit/1e8279c4097245b5f8537bcf3d7d8409bffa177f))
+* Simple image rendering ([55a56f5](https://github.com/rotex1800/rotex1800.de/commit/55a56f5d60076c5ae016997b8f277d94b16f3f47))
+
+
+### Miscellaneous Chores
+
+* **check:** Remove useless upload-artifact step ([9d99811](https://github.com/rotex1800/rotex1800.de/commit/9d998118069b02a35c2fd11a8057791e42c1b67d))
+* **deps:** bump axios from 1.6.0 to 1.6.7 ([29a4ded](https://github.com/rotex1800/rotex1800.de/commit/29a4dedf141be221c346fb056f7b87601f874d8e))
+* **deps:** bump laravel/pint from 1.13.9 to 1.13.10 ([8a8e054](https://github.com/rotex1800/rotex1800.de/commit/8a8e05440d7e6f45550c2cbd41135e0eeb39e031))
+* **deps:** bump laravel/sail from 1.27.1 to 1.27.3 ([a972ba9](https://github.com/rotex1800/rotex1800.de/commit/a972ba95455cf4d8a50f09eecaead190b473561a))
+* **deps:** bump livewire/livewire from 3.3.5 to 3.4.4 ([275add8](https://github.com/rotex1800/rotex1800.de/commit/275add8dccfb425a365ada80fc8993c46aa9045d))
+* **deps:** bump lucassabreu/comment-coverage-clover ([c6abd08](https://github.com/rotex1800/rotex1800.de/commit/c6abd08d8372b0840c1b64f7838e44ace68b39af))
+* **deps:** bump tailwindcss from 3.3.3 to 3.4.1 ([7ed1b17](https://github.com/rotex1800/rotex1800.de/commit/7ed1b17c83aa070e1e5285c018c84f76a4deeace))
+
 ## [0.1.5](https://github.com/rotex1800/rotex1800.de/compare/v0.1.4...v0.1.5) (2024-01-20)
 
 
