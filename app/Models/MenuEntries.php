@@ -23,15 +23,41 @@ class MenuEntries
         $sanitizedPath = Utils::sanitizePath($path);
 
         foreach ($menus as $menu) {
+            $name = $menu;
+            if (is_array($menu)) {
+                $name = $menu['name'];
+            }
             $entries[] = new MenuEntry([
+                'menu' => $name,
+                'order' => self::determineOrder($menu, $path),
                 'path' => $sanitizedPath,
-                'menu' => $menu,
-                'order' => 1,
                 'text' => $hugoHelper->getTitle(),
                 'checksum' => md5($fileContent),
             ]);
         }
 
         return $entries;
+    }
+
+    /**
+     * @param string|array<string> $menu
+     * @param string $path
+     * @return int|null
+     */
+    private static function determineOrder(string|array $menu, string $path): ?int
+    {
+        $order = null;
+        if (is_array($menu) && array_key_exists('order', $menu)) {
+            $order = intval($menu['order']);
+        }
+
+        if (
+            (str_ends_with($path, '_index.md') && is_string($menu))
+            ||
+            (is_array($menu) && ! array_key_exists('order', $menu))) {
+            $order = 0;
+        }
+
+        return $order;
     }
 }
