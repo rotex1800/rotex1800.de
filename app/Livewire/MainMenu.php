@@ -22,7 +22,11 @@ class MainMenu extends Component
 
     public function mount(): void
     {
-        $this->entries = MenuEntry::whereMenu($this->menu)->get();
+        $this->entries = MenuEntry::whereMenu($this->menu)
+            ->orderByRaw('`order` is null')
+            ->orderBy('order')
+            ->orderBy('text')
+            ->get();
     }
 
     public function render(): View|Factory|Application

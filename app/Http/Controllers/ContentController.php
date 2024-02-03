@@ -34,9 +34,6 @@ class ContentController extends Controller
         return $this->serve($link);
     }
 
-    /**
-     * @param  Link  $link
-     */
     private function serve(?Link $link): View
     {
         if ($link == null) {

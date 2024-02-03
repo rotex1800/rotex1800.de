@@ -56,7 +56,7 @@ class HugoFile
     }
 
     /**
-     * @return string[]
+     * @return array<string, string|array<string, string>>
      */
     public function getMenus(): array
     {
