@@ -54,7 +54,33 @@ EOD;
         ->path->toBe('example/path')
         ->menu->toBe('main')
         ->text->toBe('JHV 2014')
-        ->order->toBeOne();
+        ->order->toBe(null);
+});
+
+it('can be created from from markdown file with extended hugo frontmatter', function () {
+    $fileContent = <<<'EOD'
+---
+date: 2014-08-10
+title: JHV 2014
+menu:
+    - name: extended syntax
+      order: 3
+---
+Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
+Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
+EOD;
+
+    Storage::fake('content');
+    Storage::disk('content')->put('example/path.md', $fileContent);
+
+    $entries = MenuEntries::fromFile('/example/path.md');
+    expect($entries)
+        ->toBeArray()
+        ->and($entries[0])
+        ->path->toBe('example/path')
+        ->menu->toBe('extended syntax')
+        ->text->toBe('JHV 2014')
+        ->order->toBe(3);
 });
 
 it('can be created from from markdown file with multiple menus is hugo frontmatter', function () {
@@ -79,6 +105,72 @@ EOD;
         ->menu->toBe('main')
         ->and($entries[1])
         ->menu->toBe('secondary');
+});
+
+it('assigns order 0 to _index.md if order unspecified', function () {
+    $fileContent = <<<'EOD'
+---
+date: 2014-08-10
+title: JHV 2014
+menu:
+    - name: extended syntax
+---
+Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
+Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
+EOD;
+
+    Storage::fake('content');
+    Storage::disk('content')->put('example/_index.md', $fileContent);
+
+    $entries = MenuEntries::fromFile('/example/_index.md');
+    expect($entries)
+        ->toBeArray()
+        ->and($entries[0])
+        ->order->toBe(0);
+});
+
+it('keeps order of _index.md if specified', function () {
+    $fileContent = <<<'EOD'
+---
+date: 2014-08-10
+title: JHV 2014
+menu:
+    - name: extended syntax
+      order: 2
+---
+Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
+Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
+EOD;
+
+    Storage::fake('content');
+    Storage::disk('content')->put('example/_index.md', $fileContent);
+
+    $entries = MenuEntries::fromFile('/example/_index.md');
+    expect($entries)
+        ->toBeArray()
+        ->and($entries[0])
+        ->order->toBe(2);
+});
+
+it('does not crash for _index file with simple menu syntax', function () {
+    $fileContent = <<<'EOD'
+---
+date: 2014-08-10
+title: JHV 2014
+menu: main
+---
+Wann merkt man, dass schon wieder ein Jahr ins Land gegangen ist? An
+Weihnachten? An Neujahr? Am Geburtstag? Nein! Am alljährlichen Reboundabend!
+EOD;
+
+    Storage::fake('content');
+    Storage::disk('content')->put('example/_index.md', $fileContent);
+
+    $entries = MenuEntries::fromFile('/example/_index.md');
+    expect($entries)
+        ->toBeArray()
+        ->and($entries[0])
+        ->order->toBe(0);
 });
 
 it('returns empty array for no file at given path', function () {
