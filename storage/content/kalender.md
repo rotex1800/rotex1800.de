@@ -1,7 +1,9 @@
 ---
 slug: /kalender
 title: Kalender
-menu: main
+menu:
+    - name: main
+      order: 1
 ---
 
 [Die Termine können auch abonniert](https://storage.rotex1800.de/remote.php/dav/public-calendars/St4BEmjY2CqQaqHt?export) werden um sie im Kalender auf dem

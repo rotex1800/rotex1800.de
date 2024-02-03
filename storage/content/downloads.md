@@ -1,7 +1,9 @@
 ---
 slug: /downloads
 title: Downloads
-menu: main
+menu:
+    - name: main
+      order: 2
 ---
 ## EuropaTour
 
