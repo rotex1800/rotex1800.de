@@ -79,13 +79,6 @@ jobs:
           name: console
           path: tests/Browser/console
 
-      - name: Publish Screenshots
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: screenshots
-          path: screenshots/
-
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
