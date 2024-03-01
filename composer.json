@@ -19,7 +19,7 @@
         "symfony/yaml": "^6.3"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.13",
+        "barryvdh/laravel-ide-helper": "^3.0",
         "christophrumpel/missing-livewire-assertions": "^v2.3.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/dusk": "^7.12",
