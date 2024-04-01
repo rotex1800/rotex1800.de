@@ -61,7 +61,7 @@ jobs:
           --coverage --coverage-clover coverage-report.xml --min=85
 
       - name: Report Coverage in comment
-        uses: lucassabreu/comment-coverage-clover@v0.12.0
+        uses: lucassabreu/comment-coverage-clover@v0.13.0
         with:
           file: coverage-report.xml
 
