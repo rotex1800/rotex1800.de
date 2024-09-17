@@ -20,30 +20,36 @@ class MenuEntries
         $hugoHelper = HugoFile::fromContent($fileContent);
         $entries = [];
         $sanitizedPath = Utils::sanitizePath($path);
-        $entries = array_merge($entries, self::buildIndexMenuEntries($path, $sanitizedPath, $hugoHelper, $fileContent));
         $entries = array_merge($entries, self::buildFrontmatterMenuEntries($hugoHelper, $path, $sanitizedPath, $fileContent));
         return $entries;
     }
 
     /**
+     * @param HugoFile $hugoHelper
      * @param string $path
      * @param string $sanitizedPath
-     * @param HugoFile $hugoHelper
      * @param string $fileContent
      * @return MenuEntry[]
      */
-    private static function buildIndexMenuEntries(string $path, string $sanitizedPath, HugoFile $hugoHelper, string $fileContent): array
+    private static function buildFrontmatterMenuEntries(HugoFile $hugoHelper, string $path, string $sanitizedPath, string $fileContent): array
     {
-        // Create main menu entry for _index.md files
         $entries = [];
-        if (str_ends_with($path, '_index.md')) {
+        $frontMatterMenus = $hugoHelper->getMenus();
+        $isIndexPage = str_ends_with($path, '_index.md');
+
+        foreach ($frontMatterMenus as $menu) {
+            $name = $menu;
+            if (is_array($menu)) {
+                $name = $menu['name'];
+            }
             $entries[] = new MenuEntry([
-                    'menu' => 'main',
-                    'order' => self::determineOrder('main', $path),
-                    'path' => $sanitizedPath,
-                    'text' => $hugoHelper->getTitle(),
-                    'checksum' => md5($fileContent),]
-            );
+                'menu' => $name,
+                'order' => self::determineOrder($menu, $path),
+                'path' => $sanitizedPath,
+                'text' => $hugoHelper->getTitle(),
+                'checksum' => md5($fileContent),
+                'type' => $isIndexPage ? 'index' : 'page',
+            ]);
         }
         return $entries;
     }
@@ -66,32 +72,5 @@ class MenuEntries
         }
 
         return $order;
-    }
-
-    /**
-     * @param HugoFile $hugoHelper
-     * @param string $path
-     * @param string $sanitizedPath
-     * @param string $fileContent
-     * @return MenuEntry[]
-     */
-    private static function buildFrontmatterMenuEntries(HugoFile $hugoHelper, string $path, string $sanitizedPath, string $fileContent): array
-    {
-        $entries = [];
-        $frontMatterMenus = $hugoHelper->getMenus();
-        foreach ($frontMatterMenus as $menu) {
-            $name = $menu;
-            if (is_array($menu)) {
-                $name = $menu['name'];
-            }
-            $entries[] = new MenuEntry([
-                'menu' => $name,
-                'order' => self::determineOrder($menu, $path),
-                'path' => $sanitizedPath,
-                'text' => $hugoHelper->getTitle(),
-                'checksum' => md5($fileContent),
-            ]);
-        }
-        return $entries;
     }
 }
