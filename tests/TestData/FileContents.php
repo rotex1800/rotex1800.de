@@ -143,6 +143,8 @@ EOD;
     const INDEX_PAGE = <<<'EOD'
 ---
 title: Index page
+menu:
+  - test
 ---
 This is an index page.
 EOD;

@@ -33,6 +33,12 @@ it('has checksum', function () {
         ->checksum->toBeString();
 });
 
+it('has type', function () {
+    $entry = MenuEntry::factory()->create();
+    expect($entry)
+        ->type->toBeString();
+});
+
 it('can be created from from markdown file with hugo frontmatter', function () {
     $fileContent = <<<'EOD'
 ---

@@ -182,7 +182,8 @@ it('creates menu entry for directory containing a _index.md file', function () {
     expect($entry)
         ->not->toBeNull()
         ->checksum->toBe(md5_file(Storage::disk('content')->path('posts/_index.md')))
-        ->text->toBe('Index page');
+        ->text->toBe('Index page')
+        ->type->toBe('index');
 });
 
 it('removes outdated menu entries', function () {
