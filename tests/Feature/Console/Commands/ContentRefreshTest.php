@@ -6,7 +6,6 @@ use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
 use Tests\TestData\FileContents;
-
 use function Pest\Laravel\assertDatabaseEmpty;
 use function Pest\Laravel\assertDatabaseHas;
 
@@ -166,6 +165,24 @@ it('creates menu entries for files with "menu" frontmatter', function () {
     expect($entry)
         ->not->toBeNull()
         ->checksum->toBe(md5_file(Storage::disk('content')->path('kalender.md')));
+});
+
+it('creates menu entry for directory containing a _index.md file', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->makeDirectory('posts');
+    Storage::disk('content')->put('posts/_index.md', FileContents::INDEX_PAGE);
+
+    // Act
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseCount('menu_entries', 1);
+    $entry = MenuEntry::where('path', '=', 'posts')->first();
+    expect($entry)
+        ->not->toBeNull()
+        ->checksum->toBe(md5_file(Storage::disk('content')->path('posts/_index.md')))
+        ->text->toBe('Index page');
 });
 
 it('removes outdated menu entries', function () {

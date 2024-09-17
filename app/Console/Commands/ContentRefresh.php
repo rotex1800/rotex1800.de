@@ -91,5 +91,6 @@ class ContentRefresh extends Command
                 report($exception);
             }
         });
+        $this->newLine();
     }
 }
