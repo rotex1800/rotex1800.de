@@ -139,4 +139,11 @@ date: 2014-08-10
 ---
 This file has no title
 EOD;
+
+    const INDEX_PAGE = <<<'EOD'
+---
+title: Index page
+---
+This is an index page.
+EOD;
 }
