@@ -2,14 +2,14 @@
 
 namespace Tests\Feature\Livewire;
 
-use App\Livewire\MainMenu;
+use App\Livewire\Menu;
 use App\Models\MenuEntry;
 use Illuminate\Support\Collection;
 use Livewire\Livewire;
 use Sinnbeck\DomAssertions\Asserts\AssertElement;
 
 it('can render MainMenu', function () {
-    Livewire::test(MainMenu::class, [
+    Livewire::test(Menu::class, [
         'currentPath' => '/path',
     ])
         ->assertStatus(200);
@@ -19,7 +19,7 @@ it('contains top level entries with given strings', function () {
     $entries = MenuEntry::factory()
         ->count(4)
         ->create();
-    Livewire::test(MainMenu::class, ['currentPath' => '/path'])->assertStatus(200)
+    Livewire::test(Menu::class, ['currentPath' => '/path'])->assertStatus(200)
         ->assertElementExists('nav', function (AssertElement $element) use ($entries) {
             foreach ($entries as $entry) {
                 $element->contains('nav > ul', ['class' => 'flex-col md:flex-row flex']);
@@ -35,7 +35,7 @@ it('sorts entries by order if specified', function () {
     MenuEntry::factory()->create(['order' => 2, 'text' => 'c']);
     MenuEntry::factory()->create(['order' => 1, 'text' => 'd']);
 
-    $menu = Livewire::test(MainMenu::class, ['currentPath' => '/path'])->assertStatus(200);
+    $menu = Livewire::test(Menu::class, ['currentPath' => '/path'])->assertStatus(200);
     /** @var Collection $entries */
     $entries = $menu->get('entries');
     expect($entries)
@@ -51,7 +51,7 @@ it('sorts entries by text if order not specified', function () {
     MenuEntry::factory()->create(['order' => null, 'text' => 'c']);
     MenuEntry::factory()->create(['order' => null, 'text' => 'd']);
 
-    $menu = Livewire::test(MainMenu::class, ['currentPath' => '/path'])->assertStatus(200);
+    $menu = Livewire::test(Menu::class, ['currentPath' => '/path'])->assertStatus(200);
     /** @var Collection $entries */
     $entries = $menu->get('entries');
     expect($entries)
@@ -66,7 +66,7 @@ it('puts entries with order first', function () {
     MenuEntry::factory()->create(['order' => 1, 'text' => 'c']);
     MenuEntry::factory()->create(['order' => 2, 'text' => 'd']);
 
-    $menu = Livewire::test(MainMenu::class, ['currentPath' => '/path'])->assertStatus(200);
+    $menu = Livewire::test(Menu::class, ['currentPath' => '/path'])->assertStatus(200);
     /** @var Collection $entries */
     $entries = $menu->get('entries');
     expect($entries)
