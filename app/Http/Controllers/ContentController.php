@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
+use App\Models\MenuEntry;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -24,16 +25,6 @@ class ContentController extends Controller
         return $this->serve($link);
     }
 
-    /**
-     * Handle the incoming request on arbitrary path.
-     */
-    public function path(Request $request): Factory|View
-    {
-        $link = Link::where('path', '=', $request->path())->first();
-
-        return $this->serve($link);
-    }
-
     private function serve(?Link $link): View
     {
         if ($link == null) {
@@ -45,10 +36,25 @@ class ContentController extends Controller
             abort(404);
         }
 
+        $hasMenu = MenuEntry::where('menu', '!=', 'main')
+            ->first();
+        $secondaryMenu = $hasMenu ? $hasMenu->menu : null;
+
         return view('app')->with([
             'content' => $this->markdown->toHtml($post->content),
             'path' => $link->path,
             'title' => $post->title,
+            'secondaryMenu' => $secondaryMenu
         ]);
+    }
+
+    /**
+     * Handle the incoming request on arbitrary path.
+     */
+    public function path(Request $request): Factory|View
+    {
+        $link = Link::where('path', '=', $request->path())->first();
+
+        return $this->serve($link);
     }
 }
