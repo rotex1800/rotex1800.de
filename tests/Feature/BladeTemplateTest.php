@@ -1,8 +1,8 @@
 <?php
 
-use App\Livewire\Menu;
+use App\Livewire\MainMenu;
 
 test('"app.blade.php" contains MainMenu livewire component', function () {
     $view = $this->view('app', ['content' => 'Foo', 'path' => '/path']);
-    $view->assertSeeLivewire(Menu::class);
+    $view->assertSeeLivewire(MainMenu::class);
 });

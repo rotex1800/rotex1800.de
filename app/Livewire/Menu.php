@@ -8,10 +8,11 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
+use Nette\NotImplementedException;
 
-class Menu extends Component
+abstract class Menu extends Component
 {
-    public string $menu = 'main';
+    public string $menu;
 
     public string $currentPath;
 
@@ -31,9 +32,6 @@ class Menu extends Component
 
     public function render(): View|Factory|Application
     {
-        return view('livewire.main-menu', [
-            'entries' => $this->entries,
-            'currentPath' => $this->currentPath,
-        ]);
+        throw new NotImplementedException("The render function of the Livewire Menu needs to be overridden!");
     }
 }
