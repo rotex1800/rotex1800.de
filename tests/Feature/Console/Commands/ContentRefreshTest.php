@@ -186,6 +186,22 @@ it('creates menu entry for directory containing a _index.md file', function () {
         ->type->toBe('index');
 });
 
+it('creates accessible page for _index.md file', function () {
+    // Arrange
+    Storage::fake('content');
+    Storage::disk('content')->makeDirectory('posts');
+    Storage::disk('content')->put('posts/_index.md', FileContents::INDEX_PAGE);
+
+    // Act
+    Artisan::call('content:refresh');
+
+    // Assert
+    $this->assertDatabaseHas('links', [
+        'path' => 'posts'
+    ]);
+
+});
+
 it('removes outdated menu entries', function () {
     // Arrange
     Storage::fake('content');
