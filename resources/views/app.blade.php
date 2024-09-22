@@ -11,12 +11,21 @@
 </head>
 <body>
 <livewire:main-menu current-path="{{ $path }}"/>
-<div id="content" class="prose p-4 m-auto">
+<div class="prose max-w-none pt-8">
     @isset($title)
-        <h1>{{ $title }}</h1>
+        <h1 class="ms-56 text-center">{{ $title }}</h1>
     @endisset
-    {!! $content !!}
+    <div class="flex flex-row w-full">
+        @isset($secondaryMenu)
+            <div class="">
+                <livewire:secondary-menu current-path="{{ $path }}" menu="{{ $secondaryMenu }}"/>
+            </div>
+        @endisset
+        <div id="content" class="place-content-center prose p-4 m-auto">
+            {!! $content !!}
+        </div>
+        @livewireScripts
+    </div>
 </div>
-@livewireScripts
 </body>
 </html>

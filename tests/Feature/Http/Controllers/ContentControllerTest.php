@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\SecondaryMenu;
 use Sinnbeck\DomAssertions\Asserts\AssertElement;
 use Tests\TestData\FileContents;
 
@@ -16,7 +17,8 @@ it('serves markdown file matching the request path', function () {
         ->assertElementExists('h1', function (AssertElement $element) {
             $element->containsText('Example');
             $element->doesntContainText('title');
-        });
+        })
+        ->assertSeeLivewire(SecondaryMenu::class);
 });
 
 it('serves _index file when accessing the root', function () {

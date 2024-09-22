@@ -3,6 +3,8 @@ date: 2014-09-15
 title: Nienburg 2014 – Welcome Wochenende
 categories: 
     - Wochenende
+menu:
+    - name: posts
 ---
 Vom 19.09 bis zum 21.09.2014 lud Rotex 1800 e.V.  alle Inbounds  der aktuellen
 Saison 2014/2015, sowie die Rebounds des Austauschjahres 2013/2014 zu einem

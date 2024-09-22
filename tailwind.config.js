@@ -5,7 +5,15 @@ export default {
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ], theme: {
-        extend: {},
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        maxWidth: '100ch'
+                    }
+                }
+            }
+        },
     },
     plugins: [
         require('@tailwindcss/typography'),
