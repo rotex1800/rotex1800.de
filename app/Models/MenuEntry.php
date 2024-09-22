@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\MenuEntry
@@ -30,6 +31,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|MenuEntry whereUpdatedAt($value)
  * @property string $type
  * @method static \Illuminate\Database\Eloquent\Builder|MenuEntry whereType($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Link> $links
+ * @property-read int|null $links_count
  * @mixin \Eloquent
  */
 class MenuEntry extends Model
@@ -44,6 +47,11 @@ class MenuEntry extends Model
         'checksum',
         'type',
     ];
+
+    public function links(): BelongsToMany
+    {
+        return $this->belongsToMany(Link::class);
+    }
 
     public function matches(string $string): bool
     {

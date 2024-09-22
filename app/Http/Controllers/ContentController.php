@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
-use App\Models\MenuEntry;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -36,15 +35,15 @@ class ContentController extends Controller
             abort(404);
         }
 
-        $hasMenu = MenuEntry::where('menu', '!=', 'main')
-            ->first();
-        $secondaryMenu = $hasMenu ? $hasMenu->menu : null;
-
+        $secondaryMenu = $link->menusEntries()
+            ->where('menu', '!=', 'main')
+            ->first()
+        ;
         return view('app')->with([
             'content' => $this->markdown->toHtml($post->content),
             'path' => $link->path,
             'title' => $post->title,
-            'secondaryMenu' => $secondaryMenu
+            'secondaryMenu' => $secondaryMenu ? $secondaryMenu->menu : null
         ]);
     }
 

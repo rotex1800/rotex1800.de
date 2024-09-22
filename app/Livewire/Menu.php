@@ -25,6 +25,7 @@ abstract class Menu extends Component
     {
         $this->entries = MenuEntry::whereMenu($this->menu)
             ->orderByRaw('`order` is null')
+            ->orderBy('type', 'desc')
             ->orderBy('order')
             ->orderBy('text')
             ->get();

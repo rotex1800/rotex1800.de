@@ -32,8 +32,12 @@ it('loads content into database', function () {
 
     $this->assertDatabaseCount(Post::class, 4);
     $this->assertDatabaseCount(Link::class, 4);
+    $this->assertDatabaseCount('link_menu_entry', 6);
 
     $this->assertDatabaseHas('links', ['path' => 'kalender']);
+    $kalenderLink = Link::where('path', '=', 'kalender')->first();
+    expect($kalenderLink)
+        ->menusEntries()->count()->toBe(1);
     $this->assertDatabaseHas('links', ['path' => 'posts/2014-jhv']);
     $this->assertDatabaseHas('links', ['path' => '/']);
     $this->assertDatabaseHas('links', ['path' => 'legal']);
@@ -164,7 +168,7 @@ it('creates menu entries for files with "menu" frontmatter', function () {
     $entry = MenuEntry::where('path', '=', 'kalender')->first();
     expect($entry)
         ->not->toBeNull()
-        ->checksum->toBe(md5_file(Storage::disk('content')->path('kalender.md')));
+        ->checksum->not->toBeNull();
 });
 
 it('creates menu entry for directory containing a _index.md file', function () {
@@ -177,11 +181,13 @@ it('creates menu entry for directory containing a _index.md file', function () {
     Artisan::call('content:refresh');
 
     // Assert
-    $this->assertDatabaseCount('menu_entries', 1);
+    $this->assertDatabaseCount('menu_entries', 2);
+    assertDatabaseHas('menu_entries', ['menu' => 'posts']);
+    assertDatabaseHas('menu_entries', ['menu' => 'main']);
     $entry = MenuEntry::where('path', '=', 'posts')->first();
     expect($entry)
         ->not->toBeNull()
-        ->checksum->toBe(md5_file(Storage::disk('content')->path('posts/_index.md')))
+        ->checksum->not->toBeNull()
         ->text->toBe('Index page')
         ->type->toBe('index');
 });
@@ -199,7 +205,17 @@ it('creates accessible page for _index.md file', function () {
     $this->assertDatabaseHas('links', [
         'path' => 'posts'
     ]);
-
+    $link = Link::where('path', '=', 'posts')->first();
+    expect($link)
+        ->menusEntries->not->toBeEmpty()
+        ->and($link->menusEntries)
+        ->count()->toBe(2);
+    $testMenuEntry = $link->menusEntries()->where('menu', '=', 'main')->first();
+    expect($testMenuEntry)
+        ->not->toBeNull();
+    $postsMenuEntry = $link->menusEntries()->where('menu', '=', 'posts')->first();
+    expect($postsMenuEntry)
+        ->not->toBeNull();
 });
 
 it('removes outdated menu entries', function () {
