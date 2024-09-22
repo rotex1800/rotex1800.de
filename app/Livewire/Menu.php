@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
-class MainMenu extends Component
+class Menu extends Component
 {
     public string $menu = 'main';
 
