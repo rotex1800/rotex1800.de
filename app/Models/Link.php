@@ -6,6 +6,7 @@ use App\Utils;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Link
@@ -25,6 +26,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder|Link wherePath($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Link wherePostId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Link whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\MenuEntry> $menusEntries
+ * @property-read int|null $menus_entries_count
  * @mixin \Eloquent
  */
 class Link extends Model implements HasPath
@@ -45,6 +48,11 @@ class Link extends Model implements HasPath
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
+    }
+
+    public function menusEntries(): BelongsToMany
+    {
+        return $this->belongsToMany(MenuEntry::class);
     }
 
     public function path(): string

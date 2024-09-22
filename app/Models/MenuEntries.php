@@ -37,17 +37,31 @@ class MenuEntries
         $frontMatterMenus = $hugoHelper->getMenus();
         $isIndexPage = str_ends_with($path, '_index.md');
 
+        $checksumSourcePrefix = $fileContent . $sanitizedPath . ($isIndexPage ? 'index' : 'page');
+        if ($isIndexPage) {
+            $checksum = md5($checksumSourcePrefix . $sanitizedPath);
+            $entries[] = new MenuEntry([
+                'menu' => $sanitizedPath,
+                'order' => self::determineOrder($sanitizedPath, $path),
+                'path' => $sanitizedPath,
+                'text' => $hugoHelper->getTitle() ?? $sanitizedPath,
+                'checksum' => $checksum,
+                'type' => 'index',
+            ]);
+        }
         foreach ($frontMatterMenus as $menu) {
             $name = $menu;
             if (is_array($menu)) {
                 $name = $menu['name'];
             }
+
+            $checksum = md5($checksumSourcePrefix . $name);
             $entries[] = new MenuEntry([
                 'menu' => $name,
                 'order' => self::determineOrder($menu, $path),
                 'path' => $sanitizedPath,
-                'text' => $hugoHelper->getTitle(),
-                'checksum' => md5($fileContent),
+                'text' => $hugoHelper->getTitle() ?? $sanitizedPath,
+                'checksum' => $checksum,
                 'type' => $isIndexPage ? 'index' : 'page',
             ]);
         }

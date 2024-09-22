@@ -133,7 +133,7 @@ date: 2014-08-10
 This is a markdown file read from disk!
 EOD;
 
-    const NO_TITLE = <<<'EOD'
+    const NO_TITLE_NO_MENU = <<<'EOD'
 ---
 date: 2014-08-10
 ---
@@ -144,8 +144,22 @@ EOD;
 ---
 title: Index page
 menu:
-  - test
+    -   name: main
+        order: 10
+    -   name: posts
 ---
 This is an index page.
+EOD;
+
+    const MAIN_MENU_AND_POSTS_MENU = <<<'EOD'
+---
+menu:
+    -   name: main
+        order: 10
+    -   name: posts
+title: Posts
+---
+
+# Test heading
 EOD;
 }

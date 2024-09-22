@@ -2,6 +2,13 @@
 
 use App\Models\MenuEntries;
 use App\Models\MenuEntry;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+it('has many links', function () {
+    $entry = MenuEntry::factory()->create();
+    expect($entry)
+        ->links()->toBeInstanceOf(BelongsToMany::class);
+});
 
 it('has text', function () {
     $entry = MenuEntry::factory()->create();
@@ -155,6 +162,8 @@ EOD;
     expect($entries)
         ->toBeArray()
         ->and($entries[0])
+        ->order->toBe(0)
+        ->and($entries[1])
         ->order->toBe(2);
 });
 

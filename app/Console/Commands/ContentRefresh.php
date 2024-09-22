@@ -49,7 +49,7 @@ class ContentRefresh extends Command
     }
 
     /**
-     * @param  array<string>  $markdownFiles
+     * @param array<string> $markdownFiles
      */
     private function deleteOutdatedPosts(array $markdownFiles): void
     {
@@ -63,7 +63,7 @@ class ContentRefresh extends Command
     }
 
     /**
-     * @param  array<string>  $paths
+     * @param array<string> $paths
      */
     private function createPostEntries(array $paths): void
     {
@@ -75,17 +75,21 @@ class ContentRefresh extends Command
                     return;
                 }
                 $post = Post::fromHugoContent($fileContent);
-                if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
-                    $post->save();
-                    $linkFromFile = Link::fromFilePath($path);
-                    Link::where('path', '=', $linkFromFile->path)->delete();
-                    $post->links()->save($linkFromFile);
-                }
                 $menuEntries = MenuEntries::fromFile($path);
                 foreach ($menuEntries as $entry) {
                     if (MenuEntry::where('checksum', '=', $entry->checksum)->count() == 0) {
                         $entry->save();
                     }
+                }
+                if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
+                    $post->save();
+                    $link = Link::fromFilePath($path);
+                    Link::where('path', '=', $link->path)->delete();
+                    $post->links()->save($link);
+                    foreach ($menuEntries as $menuEntry) {
+                        $link->menusEntries()->attach($menuEntry->id);
+                    }
+                    $link->save();
                 }
             } catch (Exception $exception) {
                 report($exception);
