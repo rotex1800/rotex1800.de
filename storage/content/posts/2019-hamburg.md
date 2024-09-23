@@ -3,6 +3,8 @@ date: 2019-06-20
 title: Moin Hamburg!
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Anfang Juni fand die jährliche Rotary International Convention (RIC) in Hamburg
 statt, also quasi vor der Haustür des Distrikts 1800. Die Gelegenheit eine RIC
@@ -12,7 +14,7 @@ Lüneburg reisten ging es zusammen mit dem Zug nach Hamburg, noch vor der
 eigentlichen Convention, welche traditionell am Samstag beginnt und am Sonntag
 offiziell eröffnet wird, stand die Youth Exchange Officers Preconvention an.
 
-![Rotexer:innen aus 1800 vor dem Messegelände](/img/2019-hamburg-ric.jpg)
+![Rotexer:innen aus 1800 vor dem Messegelände](/images/2019-hamburg-ric.jpg)
 
 Bei dieser kommen Jugenddiestbeauftragte aus der ganzen Welt zusammen und sich
 über den rotarischen Jugendaustausch auszutauschen und diesen gemeinsam zu
@@ -41,4 +43,3 @@ funktioniert, besteht dennoch das Kernziel, dass aus den jugendlichen Outbounds
 junge Erwachsene werden, welche reich an positiven Erfahrungen und Erlebnissen
 aus ihrem Austausch zurückkommen und die Völkerverständigung vereinfachen und
 antreiben.
-

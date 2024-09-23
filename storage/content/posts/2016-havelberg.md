@@ -3,6 +3,8 @@ date: 2016-06-17
 title: Goodbye-Wochenende – Havelberg 2016
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Für das sommerlichste aller Rotex-Wochenenden zeigte sich das Wetter von seiner
 besten Seite: Strahlender Sonnenschein und sommerliche Temperaturen weckten
@@ -22,7 +24,7 @@ konnten. Zufrieden und erschöpft (die besten Voraussetzungen für etwas
 Rotex-Schlaf) kehrten alle zum Kanuzentrum zurück, um dort den Abend in Ruhe
 ausklingen zu lassen.
 
-![Mexikanische Austauschschüler vor der Havel](/img/2016-havelberg.jpg)
+![Mexikanische Austauschschüler vor der Havel](/images/2016-havelberg.jpg)
 
 Das war auch gut so, denn sämtliche zur Verfügung stehende Energie wurde am
 nächsten Morgen wieder eingefordert. Nach einem köstlichen Frühstück, das

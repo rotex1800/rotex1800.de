@@ -3,6 +3,8 @@ date: 2015-10-03
 title: Welcome-Wochenende – Neustadt 2015
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Am vergangenen Wochenende war es wieder soweit: „Die Neuen“ waren angekommen.
@@ -19,7 +21,7 @@ Candle-Light-Talk bei dem sich die Inbounds mit uns aber auch untereinander übe
 die ersten Herausforderungen und schönen Erlebnisse ihres Austauschs reden
 können. Der Abend klang mit geselligen Spielen und Tanzen aus.
 
-![Gruppenfoto auf dem Welcomewochenende 2015 in Neustadt](/img/2015-neustadt.jpg)
+![Gruppenfoto auf dem Welcomewochenende 2015 in Neustadt](/images/2015-neustadt.jpg)
 
 Gut gestärkt vom Frühstück ging es auf eine Stadtrally durch Neustadt, die der
 Rotary Club Nienburg-Neustadt organisiert hatte. Da waren vor allem

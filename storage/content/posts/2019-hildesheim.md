@@ -3,6 +3,8 @@ date: 2019-05-27
 title: ET Revival Wochenende in Hildesheim
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Nachdem unsere Inbounds für drei Wochen die Zeit auf den beiden Europa Touren
 genossen haben, hatten sie die Chance sich auf dem diesjährigen Europa-Tour-
@@ -17,7 +19,7 @@ wie bekannt mit Regeln, Abendessen und Candlelight-Talk eröffnet. Mit Möhren
 ziehen und Steh-Bock-Lauf-Bock beendeten wir den Abend auf spielerische Weise.
 
 ![AustauschschülerInnen beim "Tag der Hilfsbereitschaft" in
-Hildesheim](/img/2019-hildesheim.jpg)
+Hildesheim](/images/2019-hildesheim.jpg)
 
 Um 22 Uhr wurde noch eine interne Mitgliederversammlung einberufen um über
 Kostenzuschüsse für die Rotary International Convention abzustimmen.

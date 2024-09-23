@@ -25,7 +25,7 @@ sich so besser miteinander austauschen und spürte die Gemeinschaft des Rotex
 1800 e.V.
 
 
-![Die Teilnehmer:innen der zweiten Rotex Academy](/img/2022-academy-2.jpg)
+![Die Teilnehmer:innen der zweiten Rotex Academy](/images/2022-academy-2.jpg)
 
 Im ersten Workshop nahmen wir uns die Europatour. Bei der Europatour handelt es
 sich wahrscheinlich um die Königsdisziplin von Rotex 1800: Sie wird

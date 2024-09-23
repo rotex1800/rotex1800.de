@@ -1,8 +1,10 @@
 ---
 date: 2014-12-15
 title: Weihnachtswochenende - Uelzen 2014
-categories: 
+categories:
     - Wochenende
+menu:
+    -   name: posts
 ---
  
 Ihr Kinderlein kommet…
@@ -23,7 +25,7 @@ Unterhaltungen im Teelichtschein, wurde die Turnhalle der
 Theodor-Heuss-Oberschule mit lateinamerikanischen Bässen bis tief in die Nacht
 erfüllt.
 
-![Weihnachtswochenende 2014](/img/2014-uelzen.jpg)
+![Weihnachtswochenende 2014](/images/2014-uelzen.jpg)
 
 Am nächsten Morgen sollte sich zeigen, dass Uelzen mehr als nur den
 Hundertwasserbahnhof zu bieten hat. So teilten wir uns in zwei Gruppen, um die

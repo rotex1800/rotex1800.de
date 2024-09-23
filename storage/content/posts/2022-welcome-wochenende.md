@@ -8,7 +8,7 @@ image: /img/2022-suedseecamp.jpg
 
 Nach langem Warten war es dieses Jahr endlich wieder soweit: Zum ersten Mal seit 2019 konnten wir wieder gemeinsam mit unseren neuen Inbounds im Südsee-Camp bei Soltau zum Welcome-Wochenende zusammenkommen.
 
-![Inbound klettert auf einen Turm](/img/2022-suedseecamp.jpg)
+![Inbound klettert auf einen Turm](/images/2022-suedseecamp.jpg)
 
 Trotz kalten Wetters war die Stimmung gut und das Programm abwechslungsreich. Klettern, Bogenschießen, Dschungel-Golf, ein Schwimmbadbesuch und ein Tanzkurs standen auf dem Plan.
 

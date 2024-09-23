@@ -3,6 +3,8 @@ date: 2022-12-20
 title: Bewerberwochenende 2022
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Advent, Advent, die dritte Kerze brennt… Bei Rotex 1800 e.V. scheint der Weihnachtsmann seinen Kalender nicht im Griff zu haben - denn schon am dritten Adventswochenende bescherte er uns ein wunderbares Bewerber:innenwochenende in Magdeburg.
@@ -11,7 +13,7 @@ Am Freitag trudelten gegen 17 Uhr die Bewerber:innen ein und hatten schon die er
 
 Die Schüler:innen hatten die Möglichkeiten, sich nochmal intensiv über Argentinien, Brasilien, die USA, Finnland, Kolumbien und Chile zu informieren. Die einzelnen Stände wurden von Rotexer:innen sowie unseren zwei Inbounds Kerttu (Finnland) und Salomé (Kolumbien) gestaltet. Die Bewerber:innen wurden gebeten, sich zu allen präsentierten Ländern Notizen über alles zu machen, was ihnen gefällt, Sorgen bereitet oder sie einfach überrascht hat. Nach diesem sehr bunten und aufwühlenden Abend ging es dann um 22 Uhr ins Bett, um den nächsten Tag voller Energie bewältigen zu können.
 
-![Die Bewerber:innen für das Austauschjahr 2023/24](/img/2022-bewerber.jpg)
+![Die Bewerber:innen für das Austauschjahr 2023/24](/images/2022-bewerber.jpg)
 
 Es ging morgens nämlich auch verhältnismäßig früh los - ab 7:30 stand das Frühstück bereit und um viertel vor neun ging es schon weiter im Programm. Am Samstag wurden die Bewerber:innen in zwei Gruppen geteilt, wobei eine Gruppe den Vormittag im Zoo verbrachte und die andere für Spiele, Vorträge und natürlich für die Einzelinterviews in der Jugendherberge blieb.
 

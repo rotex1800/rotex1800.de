@@ -3,6 +3,8 @@ date: 2017-07-05
 title: Outbound-Schulung - Helmstedt/Königslutter 2017
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Oh, wie schön war wieder die Outboundschulung in diesem Jahr. Zusammen mit der
@@ -22,7 +24,7 @@ Gruppen ausgetauscht und Tipps geholt. Die ganze Gruppe hatte sich das letzte
 Mal vollständig in Wernigerode beim Bewerberwochenende gesehen, was denn großen
 Wissensdurst unterstütze.
 
-![Outbounds und Rotexer:innen vor der Unterkunft](/img/2017-helmstedt.jpg)
+![Outbounds und Rotexer:innen vor der Unterkunft](/images/2017-helmstedt.jpg)
 
 Pünktlich um 8:15 wurde der folgende Tag mit einem reichhaltigen Frühstück
 begonnen. Erholt und mit frisch getankter Kraft wurden die Outbounds am Samstag

@@ -3,6 +3,8 @@ date: 2018-06-04
 title: EuropaTour Revival - Lüneburg 2018
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Am 4. Mai war es mal wieder so weit und ein neues Rotexwochenende, diesmal in
@@ -22,7 +24,7 @@ Währenddessen bereiteten die Rotexer:innen das Abendbrot vor. Das Abendbrot
 bestand wie immer aus einem abwechslungsreichen Buffet aus vielen Leckereien,
 die alle mitgebracht hatten.
 
-![Austauschschüler in der Lüneburger Innenstadt](/img/2018-lueneburg.jpg)
+![Austauschschüler in der Lüneburger Innenstadt](/images/2018-lueneburg.jpg)
 
 Anschließend fand der „Candlelight Talk“ statt, bei dem die Inbounds und
 Outbounds gemischt in kleinen Grüppchen zusammensaßen und über die

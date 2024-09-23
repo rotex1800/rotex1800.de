@@ -14,7 +14,7 @@ Deutschland-Allgemeinwissenstest geschrieben, der vor allem den Wissenstand übe
 die Politik abfragt. Und in erster Linie der Selbstreflektion dient. Dieser Test fiel wie jedes Jahr sehr 
 unterschiedlich aus.
 
-![Teilnehmer:innern der Outboundschulung](/img/2022-outboundschulung.jpg)
+![Teilnehmer:innern der Outboundschulung](/images/2022-outboundschulung.jpg)
 
 Am nächsten starteten die Outbounds in Kleingruppen ihre Workshops, die sie auf ihr Austauschjahr vorbereiten. Die 
 Workshops drehten sich um die Themen „Leben als Austauschschüler*in“, „Internationale Kommunikation“ und „Benehmen im 
@@ -34,4 +34,3 @@ Blazer, eine Deutschlandflagge, ihre Visitenkarten und vieles mehr finden konnte
 Austauschschüler*innen in die Welt verabschiedet. Nur wenige Augen blieben trocken bei diesem emotionalen Abschied. Wir 
 wünschen den Outbounds ein wunderbares, spannendes und lehrreiches Jahr mit vielen Höhen und freuen uns schon sehr 
 darauf, sie alle in einem Jahr wieder begrüßen zu dürfen.
-

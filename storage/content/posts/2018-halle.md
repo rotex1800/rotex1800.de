@@ -3,6 +3,8 @@ date: 2018-10-22
 title: Welcome Camp - Halle 2018
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 In diesem Jahr hat Rotex zum ersten Mal das Deutschland Camp für die Inbounds
 veranstaltet. Dieses hat vom 1. bis zum 6. Oktober 2018 in der wunderschönen
@@ -24,7 +26,7 @@ des Rotary Clubs Merseburg, begrüßt. Am Abend konnten sich die Inbounds zwisch
 den Varianten einen Film zu gucken oder in den Spieleraum der Jugendherberge zu
 gehen entscheiden, um so den Abend gemütlich ausklingen zu lassen.
 
-![Gruppenfoto auf dem Welcomecamp](/img/2018-halle.jpg)
+![Gruppenfoto auf dem Welcomecamp](/images/2018-halle.jpg)
 
 Am nächsten Tag gab es, nach dem Wecken, pünktlich um 7 Uhr Frühstück, um darauf
 kurz nach 8 Uhr zur Uni Halle aufzubrechen. Dort wurden wir von den

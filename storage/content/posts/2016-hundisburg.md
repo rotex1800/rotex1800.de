@@ -3,6 +3,8 @@ date: 2016-02-25
 title: Die Narren sind los! Und ein paar Rotexer waren auch dabei…
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 
@@ -22,7 +24,7 @@ Anscheinend ausgelaugt von den vielen Gedanken und Gesprächen, wurde es schon
 gegen Mitternacht still auf allen Zimmern. Dies schien das erste Wunder des
 Wochenendes zu sein.
 
-![Ein Gruppenfoto im Garten der Hundisburg](/img/2016-hundisburg.jpg)
+![Ein Gruppenfoto im Garten der Hundisburg](/images/2016-hundisburg.jpg)
 
 Am Samstag umhüllte dichter Nebel das Schloss. Nach einem guten Frühstück zogen
 dann die Austauschschüler und Rotexer los zum Bus, der alle zuerst an die
