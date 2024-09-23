@@ -3,6 +3,8 @@ date: 2015-04-25
 title: Die Hippies sind zurück! – EuropaTour Revival Wochenende
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Am vergangenen Wochenende wurde ein großes Wiedersehen für die Austauschschüler
@@ -23,7 +25,7 @@ Erfahrungsaustausch statt, bei dem viele Tipps und Ratschläge an die
 Austauschschüler in spe weitergegeben wurden. Anschließend haben alle den Abend
 zusammen ausklingen lassen, es wurde viel geredet und getanzt.
 
-![Gruppenfoto im Rathausgarten Lüneburg 2015](/img/2015-lueneburg.jpg)
+![Gruppenfoto im Rathausgarten Lüneburg 2015](/images/2015-lueneburg.jpg)
 
 Nach einer kurzen Nacht ging es am Samstagmorgen mit dem Frühstück wieder los.
 Gestärkt sind dann alle in die Innenstadt von Lüneburg gegangen. Dort wurde die

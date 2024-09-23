@@ -4,6 +4,8 @@ author: Theresa Bettecken
 title: Weihnachts-Wochenende – Wolfenbüttel 2015
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 
@@ -26,7 +28,7 @@ Schulunterricht reden können. Es war eine Freude zu sehen, dass sich viele
 Austauschschüler mittlerweile sehr wohl in Deutschland fühlen und einige sogar
 ihre Angst äußerten die nächsten Monate könnten zu schnell vorbeigehen.
 
-![Rotexerin und Austauschschüler mit Weihnachtsmützen](/img/2015-wolfenbuettel.jpg)
+![Rotexerin und Austauschschüler mit Weihnachtsmützen](/images/2015-wolfenbuettel.jpg)
 
 Anscheinend blieb auch der Gesprächsbedarf danach bestehen, da in die zum
 Tanzsaal umfunktionierte zweite Turnhalle ganz alleine mit den Reggaeton-Klängen

@@ -3,6 +3,8 @@ date: 2015-08-06
 title: Königslutter 2015 – Outboundschulung
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Am ersten Juliwochenende diesem Jahres kamen unsere Outbounds ein letztes Mal
 zusammen bevor sie sich auf ihre große Reise in verschiedenste Länder begeben. 
@@ -20,7 +22,7 @@ paar dabei die gut Bescheid wussten. Nach dem kleinen Schrecken des Tests gab es
 dann noch ein paar Spiele und es wurde sich auch schon fleißig unterhalten und
 ausgetauscht darüber, was einen wohl erwartet. 
 
-![Eine Grupper Austauschschüler im Workshop](/img/2015-koenigslutter.jpg)
+![Eine Grupper Austauschschüler im Workshop](/images/2015-koenigslutter.jpg)
 
 Am Samstag wurden die Outbounds dann in vier Gruppen aufgeteilt, die auf vier
 Workshops verteilt wurden. Es gab jeweils zwei Workshops vormittags und zwei

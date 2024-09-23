@@ -3,6 +3,8 @@ date: 2016-04-25
 title: Von Brüssel nach Prag - von einem Abenteuer ins nächste
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 „Woohooo!“ „Juhu, endlich!“ „Habe ich auch wirklich an ein Handtuch gedacht?“
@@ -19,7 +21,7 @@ pulsierende Metropole Paris gar keine Zeit erst richtig zu realisieren, was in
 Brüssel vorgefallen war. Die spannenden und erlebnisreichen Stadttouren nahmen
 uns sofort gefangen.
 
-![Die Reisegruppe auf dem Weg von Wien nach Budapest](/img/2016-europatour.jpg)
+![Die Reisegruppe auf dem Weg von Wien nach Budapest](/images/2016-europatour.jpg)
 
 Neben Highlights, wie dem Eiffelturm, Monaco, dem Vatikan, dem Wiener Prater und
 der Fischerbastei, erkundeten wir eine Grotte und ein Thermalbad, aßen

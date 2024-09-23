@@ -3,6 +3,8 @@ date: 2015-02-22
 title: Hundisburg 2015 – Faschingswochenende
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Strahlender Sonnenschein begrüßteAustauschschüler und Rotexer, die am
@@ -24,7 +26,7 @@ von Rotexern oder ihren Freunden erfragen. Danach lief wieder die Musik und zwar
 bassintensive Musikbox gekauft hatten, die nun nicht mehr gebändigt werden
 konnte. 
 
-![Hundisburg 2015](/img/2015-hundisburg-hoetensleben.jpg)
+![Hundisburg 2015](/images/2015-hundisburg-hoetensleben.jpg)
 
 Der nächste Morgen begann ebenso sonnig wie der vorherige Tag geendet hatte, was
 gute Voraussetzungen für unseren Ausflug bedeutete. Mit Lunchpaketen (und der

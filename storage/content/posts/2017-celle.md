@@ -3,6 +3,8 @@ date: 2017-12-17
 title: Celle 2017 - Weihnachtswochenende
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Am 2. Adventswochenende fand für Rotexer:innen, Rebounds und natürlich Inbounds
@@ -21,7 +23,7 @@ Trotz der gemütlichen Atmosphäre zog es die meisten nach einem Rundgang wieder
 in die warme Turnhalle zum Abendessen aus mitgebrachten Speisen und dem
 anschließenden „Candlelight-talk“.
 
-![Gruppenfoto vor dem Celler Schloss](/img/2017-celle.jpg)
+![Gruppenfoto vor dem Celler Schloss](/images/2017-celle.jpg)
 
 Da zu diesem Wochenende nicht nur fast alle Austauschschüler:innen angereist
 waren, sondern auch eine Vielzahl von Rotexer :innen und Rebounds, gab uns dies

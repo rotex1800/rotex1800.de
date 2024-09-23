@@ -3,6 +3,8 @@ date: 2017-02-24
 title: Hundisburg 2017 – Faschingswochenende
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Wie jedes Jahr im Februar hieß es auch dieses Jahr wieder „Das Schloss ruft!“
@@ -24,7 +26,7 @@ ihrem Austausch, sodass dies eine gute Gelegenheit war, das bereits Erlebte zu
 resümieren und sich einige Dinge für ihre nächsten Monate in Deutschland
 vorzunehmen.
 
-![Austauschschülerinnen bei einem Spaziergang](/img/2017-hundisburg.jpg)
+![Austauschschülerinnen bei einem Spaziergang](/images/2017-hundisburg.jpg)
 
 Am Samstagmorgen ging es schon früh weiter, denn die Austauschschüler hatten
 einen spannenden Termin. Mit dem Bus fuhr die Gruppe zunächst zur Grenzstation

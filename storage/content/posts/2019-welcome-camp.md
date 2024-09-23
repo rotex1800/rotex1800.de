@@ -11,7 +11,7 @@ Jugendaustausch braucht:
 Halle/Saale und Rotary Club Georg Friedrich. Außerdem ein riesiges Dankeschön
 an unsere Organisatorinnen von Rotex Seite, Merit und Sina Gussek!*
 
-![Gruppenfoto in Halle](/img/2019-welcome-camp.jpg)
+![Gruppenfoto in Halle](/images/2019-welcome-camp.jpg)
 
 Zum zweiten Mal fand in diesem Jahr das Welcome Camp in Halle an der Saale
 statt. Für eine Woche in den Herbstferien reisten unsere Inbounds mit dem Zug

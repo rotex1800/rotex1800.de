@@ -10,7 +10,7 @@ Advent, Advent ein Lichtlein brennt - am ersten Adventswochenende verbrachten wi
 
 Am nächsten Morgen erhielten die Inbounds nach dem Frühstück alle Informationen zur heiß ersehnten Deutschlandtour. Danach hieß es warm anziehen, da in Kleingruppen eine Stadtralley quer durch Wolfenbüttel absolviert werden musste. Die Austauschschüler:innen quetschten sich vor das schmalste Haus der Stadt, machten viele Fotos und durften ihre Deutschkenntnisse auch praktisch verwenden, wenn Passant:innen gefragt werden mussten. Natürlich gab es für das Gewinner-Team einen großen Preis. Nach einigen Stunden Freizeit trafen sich alle wieder auf dem Weihnachtsmarkt, wo auch einige Rotarier:innen der Clubs Salzgitter-Wolfenbüttel und Salzgitter-Wolfenbüttel-Vorharz dazu stießen. Nach einem Gruppenfoto und einer Runde unseres heißgeliebten Ponygames an der Großen Schule wurde allen ein Becher Kinderpunsch spendiert.
 
-![Teilnehmer:innen auf der Treppe des Gymnasiums Große Schule in Wolfenbüttel](/img/2022-wolfenbuettel.jpg)
+![Teilnehmer:innen auf der Treppe des Gymnasiums Große Schule in Wolfenbüttel](/images/2022-wolfenbuettel.jpg)
 
 Zurück in der Turnhalle stand unter dem Motto „Weihnachten“ die Kostümparty und das Wichteln an, für das sich die Austauschschüler:innen kreative Kostüme und Geschenke ausgedacht hatten. Diese wurden von unserem hauseigenen Rotexweihnachtsmann mit seinem treuen Rentier verteilt.
 

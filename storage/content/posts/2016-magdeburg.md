@@ -3,6 +3,8 @@ date: 2016-05-06
 title: ET Revival – Magdeburg 2016
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Ist denn die Elbe immer noch die selbe, fragt sich der Dom und wundert sich: So
@@ -24,7 +26,7 @@ ihren ganz besonderen Zauber hatte, entfaltete bei allen ihre Wirkung. Fast
 schweigsam ging es zur Turnhalle zurück, wo es dann allerdings nicht lange dauerte und die Bässe wieder
 die Oberhand gewannen.
 
-![Austauschschüler auf der Sommerrodelbahn](/img/2016-magdeburg.jpg)
+![Austauschschüler auf der Sommerrodelbahn](/images/2016-magdeburg.jpg)
 
 Nach einer Nacht, deren Dauer nicht erwähnenswert, da kaum existent ist, lockte
 das Frühstück alle aus ihren Schlafsäcken. Mit der Straßenbahn ging es dann in

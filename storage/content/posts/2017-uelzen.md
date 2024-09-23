@@ -3,6 +3,8 @@ date: 2017-09-20
 title: Reboundschulung - Uelzen 2017
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Als Neuerung wurde dieses Jahr die Reboundschulung eingeführt, also ein ganzes
 Wochenende, das sich komplett um die Rebounds, die gerade aus dem Austausch
@@ -24,7 +26,7 @@ ihre Gastländer in Deutschland konfrontiert werden können. Der Rest des Abends
 war geprägt von munteren und nachdenklichen Gesprächen und der Freude darüber
 einander nach all der Zeit wiederzusehen. 
 
-![Die Flagge von Rotex 1800](/img/2017-uelzen.jpg)
+![Die Flagge von Rotex 1800](/images/2017-uelzen.jpg)
 
 Am Samstag starteten wir in die Workshops. Neben der Thematisierung des Films
 vom Vorabend in „Botschafter der Welt“ gab es auch eine Präsentation über die

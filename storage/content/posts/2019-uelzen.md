@@ -10,7 +10,7 @@ weihnachtliches Wochenende mit den Inbounds. Nach dem typischen Programm des Fre
 Begrüßung, Büffet, Candlelighttalk und Spielen am Freitagnachmittag und -abend, gingen die meisten der
 Austauschschüler:innen freiwillig etwas früher ins Bett als gewohnt. 
 
-![Weihnachtsgrüße](/img/2019-weihnachten.jpg)
+![Weihnachtsgrüße](/images/2019-weihnachten.jpg)
 
 Nach dem Frühstück stand nämlich der Deutschtest an, für den alle fit sein wollten, die Aufregung war einigen deutlich
 anzusehen, nachdem die Zähne geputzt waren, ging es mit einem Stift gewappnet pünktlich los und innerhalb einer Stunde

@@ -3,6 +3,8 @@ date: 2015-06-14
 title: Ein Sahnehäubchen zum Abschied – Havelberg 2015
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 Am ersten Juniwochenende sind die diesjährigen Austauschschüler ein letztes Mal
@@ -22,7 +24,7 @@ Auslandsjahr zu nehmen.
 Um halb zehn ging es dann mit allen zusammen zum Freibad für ein nächtliches
 Badevergnügen, bei dem fast alle im Pool landeten.
 
-![Eine Gruppe Kanus auf der Havel](/img/2015-havelberg.jpg)
+![Eine Gruppe Kanus auf der Havel](/images/2015-havelberg.jpg)
 
 Am Samstag nach dem Frühstück machte sich eine Hälfte der Gruppe auf den Weg zum
 Ufer und paddelte die Havel hinab. Die andere Gruppe verbrachte den Vormittag
@@ -58,4 +60,3 @@ Ein ganz besonderer Dank gilt nach diesem Wochenende dem Rotary Club Havelberg,
 welcher uns das ganze Wochenende über mit tatkräftiger Unterstützung zur Seite
 stand und vor allen Dingen die tollen Aktivitäten und die Verpflegung für die
 Austauschschüler organisiert hat.
-

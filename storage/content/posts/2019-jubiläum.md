@@ -10,7 +10,7 @@ wundervolle Wochenenden mit den Inbounds, Outbounds und Rebounds verbringen,
 zwei Europatouren veranstalten und an der Rotary International Convention in 
 Hamburg teilnehmen, sondern hatten auch ein wichtiges Jubiläum. 
 
-![Das Buffet beim 30 jährigen Jubiläum](/img/2019-jubilaeum.jpg)
+![Das Buffet beim 30 jährigen Jubiläum](/images/2019-jubilaeum.jpg)
 
 Am 31. August trafen sich aktive und passive Vereinsmitglieder im Sternhaus in
 Wolfenbüttel um unser dreißigjähriges Bestehen gebührend zu feiern. Der Abend

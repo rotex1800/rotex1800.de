@@ -3,6 +3,8 @@ date: 2019-03-03
 title: Faschingswochenende - Hundisburg 2019
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Wie jedes Jahr im Februar fand auch dieses Jahr unser Faschingswochenende wieder
 auf der Hundisburg, vom 22.- 24.02 statt.
@@ -17,7 +19,7 @@ haben wir uns zu dem gemütlichen Candle-light Talk in kleinen Gruppen zusammen
 gefunden, um über Sorgen und Probleme, aber auch schöne Momente im Austausch
 zu reden.
 
-![Die Gruppe im Garten des Schloss Hundisburg](/img/2019-hundisburg.jpg)
+![Die Gruppe im Garten des Schloss Hundisburg](/images/2019-hundisburg.jpg)
 
 Noch müde vom anstrengenden Vormittag, wurde es schon früh ruhiger, bis dann
 um 1 Uhr wirklich alle in den Betten lagen.

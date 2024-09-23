@@ -3,10 +3,12 @@ date: 2017-05-10
 title: Nienburg 2017 - EuropaTour Revival
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Genau drei Wochen nach Ende der erfolgreichen EuropaTour im April fand vom 05.-07. Mai bereits die nächste Rotex-Veranstaltung statt, das EuropaTour-Revival-Wochenende in Nienburg an der Weser. Neben den Inbounds waren auch zum ersten Mal die Outbounds bei einem „regulären“ Rotex-Wochenende anwesend.
 
-![Austauschschülerinnen](/img/2017-nienburg.jpg)
+![Austauschschülerinnen](/images/2017-nienburg.jpg)
 
 Während der Austausch für die Outbounds nun immer näher rückt und für einige nur noch wenige Wochen entfernt ist, sieht die Situation bei den meisten Inbounds andersherum aus. Für die Winter-Inbounds ist bereits ein Großteil ihrer Zeit in Deutschland vergangen und mit der EuropaTour wurden die letzten Wochen in Deutschland eingeläutet. Doch davon ließen sie sich die Stimmung auf dem Wochenende nicht verderben und schwebten stattdessen noch auf dem „Hoch“ der EuropaTour, die für viele das Highlight ihres bisherigen Austausches darstellte. Auf dem Wochenende wurde diese positive Stimmung noch etwas künstlich verlängert, indem abends gemeinsam ein Video der Tour angeschaut und viele Tour-Momente Revue passieren gelassen wurden.
 

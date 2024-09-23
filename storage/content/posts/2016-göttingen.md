@@ -3,6 +3,8 @@ date: 2016-09-19
 title: Welcome-Wochenende – Göttingen 2016
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Während das Wetter den Herbstbeginn einläutete, hatten die Rotexer von Rotex
 1800 e.V. am vergangenen Wochenende allerhand zu tun, denn die 59 Inbounds aus
@@ -20,7 +22,7 @@ aus den Heimatländern, machten die Austauschschüler Bekanntschaft mit dem
 „Candle-Light-Talk“, einer Rotex 1800 – Tradition, die auf jedem Wochenende
 durchgeführt wird.
 
-![Ein Kanu mit Austauschschülern](/img/2016-goettingen.jpg)
+![Ein Kanu mit Austauschschülern](/images/2016-goettingen.jpg)
 
 In kleinen Gruppen und in vertraulicher Atmosphäre bekamen die Austauschschüler
 die Gelegenheit, ihre ersten Wochen in Deutschland zu reflektieren und

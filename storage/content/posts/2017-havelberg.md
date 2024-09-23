@@ -3,6 +3,8 @@ date: 2017-06-14
 title: Havelberg 2017 - Goodbye Wochenende
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 Fragt man in Rotex-Kreisen nach dem Lieblingswochenende der Rotexer, antworten
 viele wie aus der Pistole geschossen: „Havelberg!“ Und all jene Havelberg-Fans
@@ -18,7 +20,7 @@ ihres Austauschjahres, somit haben auch die Outbounds in Havelberg das letzte
 Mal die Gelegenheit, die Inbounds zu sehen und ebenfalls an den Rotexern geht
 der Abschied von den Inbounds nicht spurlos vorbei.
 
-![Eine Gruppe Austauschschüler vor dem Haus der Flüsse](/img/2017-havelberg.jpg)
+![Eine Gruppe Austauschschüler vor dem Haus der Flüsse](/images/2017-havelberg.jpg)
 
 Doch als sich alle bei der Ankunft in Havelberg in die Arme fielen und sich über
 das Wiedersehen freuten, wurde die Stimmung sofort wieder positiv und die

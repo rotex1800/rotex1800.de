@@ -3,6 +3,8 @@ date: 2017-09-30
 title: Steinhude 2017 - Welcomewochenende
 categories:
     - wochenende
+menu:
+    -   name: posts
 ---
 
 
@@ -19,7 +21,7 @@ schönen Erlebnisse und Eindrücke, aber auch über eventuelle Probleme, zu rede
 und sich auszutauschen. Rotex 1800 e.V. schafft hierfür jedes Wochenende ein
 unabhängiges Forum in einer entspannten Atmosphäre.
 
-![Inbouds in Steinhude](/img/2017-steinhude.jpg)
+![Inbouds in Steinhude](/images/2017-steinhude.jpg)
 
 Anschließend wurde der Abend von einigen Kennlernspielen abgerundet, damit
 sowohl die Austauschschüler:innen sich besser kennen lernen konnten, als auch
