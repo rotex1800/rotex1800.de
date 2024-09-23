@@ -52,7 +52,7 @@ class ContentController extends Controller
      */
     public function path(Request $request): Factory|View
     {
-        $link = Link::where('path', '=', $request->path())->first();
+        $link = Link::where('path', '=', urldecode($request->path()))->first();
 
         return $this->serve($link);
     }
