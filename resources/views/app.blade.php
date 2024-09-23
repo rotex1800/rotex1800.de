@@ -21,7 +21,7 @@
                 <livewire:secondary-menu current-path="{{ $path }}" menu="{{ $secondaryMenu }}"/>
             </div>
         @endisset
-        <div id="content" class="place-content-center prose p-4 m-auto">
+        <div id="content" class="justify-center prose p-4 mx-auto">
             {!! $content !!}
         </div>
         @livewireScripts

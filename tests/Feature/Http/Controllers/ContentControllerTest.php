@@ -20,6 +20,18 @@ it('serves markdown file matching the request path', function () {
         });
 });
 
+it('serves markdown file from path with umlaut', function () {
+    Storage::fake('content');
+    Storage::disk('content')->put('posts/2015-lüneburg.md', FileContents::EXAMPLE);
+    Artisan::call('content:refresh');
+    $this->get('/posts/2015-l%C3%BCneburg')
+        ->assertStatus(200)
+        ->assertElementExists('h1', function (AssertElement $element) {
+            $element->containsText('Example');
+            $element->doesntContainText('title');
+        });
+});
+
 it('shows secondary menu for index page', function () {
     Storage::fake('content');
     Storage::disk('content')->put('example/_index.md', FileContents::INDEX_PAGE);
