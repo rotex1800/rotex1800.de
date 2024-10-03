@@ -50,9 +50,10 @@ class MenuEntries
             ]);
         }
         foreach ($frontMatterMenus as $menu) {
-            $name = $menu;
             if (is_array($menu)) {
                 $name = $menu['name'];
+            } else {
+                $name = $menu;
             }
 
             $checksum = md5($checksumSourcePrefix . $name);

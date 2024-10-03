@@ -17,7 +17,7 @@ abstract class Menu extends Component
     public string $currentPath;
 
     /**
-     * @var Collection<MenuEntry>
+     * @var Collection<int,MenuEntry>
      */
     public Collection $entries;
 

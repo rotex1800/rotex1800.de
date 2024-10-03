@@ -66,6 +66,9 @@ class Post extends Model
         return $post;
     }
 
+    /**
+     * @return HasMany<Link>
+     */
     public function links(): HasMany
     {
         return $this->hasMany(Link::class);
