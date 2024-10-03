@@ -2,6 +2,7 @@
 
 use App\Models\MenuEntries;
 use App\Models\MenuEntry;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 it('has many links', function () {
@@ -44,6 +45,12 @@ it('has type', function () {
     $entry = MenuEntry::factory()->create();
     expect($entry)
         ->type->toBeString();
+});
+
+it('has created_at date', function () {
+    $entry = MenuEntry::factory()->create();
+    expect($entry)
+        ->created_at->toBeInstanceOf(Carbon::class);
 });
 
 it('can be created from from markdown file with hugo frontmatter', function () {
