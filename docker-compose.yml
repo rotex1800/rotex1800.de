@@ -24,6 +24,7 @@ services:
             - sail
         depends_on:
             - mariadb
+            - selenium
     mariadb:
         image: 'mariadb:10'
         ports:
@@ -48,6 +49,16 @@ services:
                 - '-p${DB_PASSWORD}'
             retries: 3
             timeout: 5s
+    selenium:
+        image: seleniarm/standalone-chromium
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        volumes:
+            - '/dev/shm:/dev/shm'
+        networks:
+            - sail
+        ports:
+            - '${SELENIUM_PORT:-9515}:${SELENIUM_PORT:-9515}'
 networks:
     sail:
         driver: bridge
