@@ -65,6 +65,11 @@ jobs:
         run: |
           ./vendor/bin/sail up -d
 
+      - name: Prepare Application
+        run: |
+          ./vendor/bin/sail artisan migrate
+          ./vendor/bin/sail artisan content:refresh
+
       - name: Execute Browser Tests
         run: >
           ./vendor/bin/sail dusk
