@@ -59,6 +59,19 @@ jobs:
           vendor/bin/pest --ci
           --log-junit=junit-report.xml
           --coverage --coverage-clover coverage-report.xml --min=85
+          --exclude-testsuite=Browser
+
+      - name: Start Sail environment
+        run: |
+          ./vendor/bin/sail up -d
+
+      - name: Execute Browser Tests
+        run: >
+          ./vendor/bin/sail dusk
+
+      - name: Stop Sail environment
+        run: |
+          ./vendor/bin/sail down
 
       - name: Report Coverage in comment
         uses: lucassabreu/comment-coverage-clover@v0.13.0
