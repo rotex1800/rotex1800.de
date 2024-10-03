@@ -45,11 +45,17 @@ class Link extends Model implements HasPath
         return new Link(['path' => $sanitized]);
     }
 
+    /**
+     * @return BelongsTo<Post, Link>
+     */
     public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
     }
 
+    /**
+     * @return BelongsToMany<MenuEntry>
+     */
     public function menusEntries(): BelongsToMany
     {
         return $this->belongsToMany(MenuEntry::class);

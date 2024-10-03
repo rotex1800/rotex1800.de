@@ -48,6 +48,9 @@ class MenuEntry extends Model
         'type',
     ];
 
+    /**
+     * @return BelongsToMany<Link>
+     */
     public function links(): BelongsToMany
     {
         return $this->belongsToMany(Link::class);
