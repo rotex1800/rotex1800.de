@@ -2,6 +2,7 @@
 
 use App\Console\Commands\ContentWipe;
 use App\Models\Link;
+use App\Models\MenuEntry;
 use App\Models\Post;
 
 use function Pest\Laravel\artisan;
@@ -21,7 +22,7 @@ it('removes all posts and links from database', function () {
         ->has(Link::factory())
         ->create();
 
-    \App\Models\MenuEntry::factory(4)->create();
+    MenuEntry::factory(4)->create();
 
     assertDatabaseCount('posts', 4);
     assertDatabaseCount('links', 4);
