@@ -29,7 +29,7 @@ it('has path', function () {
 test('has index on path column', function () {
     $indexes = Schema::getIndexes('links');
     $filtered = array_filter($indexes, function ($element) {
-       return $element['name'] == 'links_path_index';
+        return $element['name'] == 'links_path_index';
     });
     expect($filtered)->not->toBeEmpty();
 });
