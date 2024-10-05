@@ -6,6 +6,7 @@ use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
 use Tests\TestData\FileContents;
+
 use function Pest\Laravel\assertDatabaseEmpty;
 use function Pest\Laravel\assertDatabaseHas;
 
@@ -203,7 +204,7 @@ it('creates accessible page for _index.md file', function () {
 
     // Assert
     $this->assertDatabaseHas('links', [
-        'path' => 'posts'
+        'path' => 'posts',
     ]);
     $link = Link::where('path', '=', 'posts')->first();
     expect($link)

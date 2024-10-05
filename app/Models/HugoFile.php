@@ -26,7 +26,7 @@ class HugoFile
     {
         $content = Storage::disk('content')->get($path);
         if ($content == null) {
-            throw new NoFileException();
+            throw new NoFileException;
         }
 
         return new HugoFile($content);
@@ -46,7 +46,7 @@ class HugoFile
     {
         $frontmatter = $this->getFrontmatter();
         if (array_key_exists('title', $frontmatter)) {
-            return '' . $frontmatter['title'];
+            return ''.$frontmatter['title'];
         } else {
             return null;
         }
@@ -57,7 +57,7 @@ class HugoFile
      */
     public function getFrontmatter(): array
     {
-        return (array)Yaml::parse($this->components[self::FRONTMATTER]);
+        return (array) Yaml::parse($this->components[self::FRONTMATTER]);
     }
 
     /**
@@ -67,7 +67,7 @@ class HugoFile
     {
         $frontmatter = $this->getFrontmatter();
         if (array_key_exists('menu', $frontmatter)) {
-            return (array)$frontmatter['menu'];
+            return (array) $frontmatter['menu'];
         } else {
             return [];
         }

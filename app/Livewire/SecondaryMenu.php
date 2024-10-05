@@ -8,7 +8,6 @@ use Illuminate\Contracts\View\View;
 
 class SecondaryMenu extends Menu
 {
-
     public string $menu;
 
     public function render(): View|Factory|Application

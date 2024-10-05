@@ -33,6 +33,6 @@ abstract class Menu extends Component
 
     public function render(): View|Factory|Application
     {
-        throw new NotImplementedException("The render function of the Livewire Menu needs to be overridden!");
+        throw new NotImplementedException('The render function of the Livewire Menu needs to be overridden!');
     }
 }

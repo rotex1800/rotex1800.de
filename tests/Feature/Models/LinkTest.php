@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 it('belongs to one post', function () {
-    $link = new Link();
+    $link = new Link;
     expect($link->post())
         ->toBeInstanceOf(BelongsTo::class);
 });
 
 it('has many menus entries', function () {
-    $link = new Link();
+    $link = new Link;
     expect($link->menusEntries())
         ->toBeInstanceOf(BelongsToMany::class);
 });

@@ -21,14 +21,11 @@ class MenuEntries
         $entries = [];
         $sanitizedPath = Utils::sanitizePath($path);
         $entries = array_merge($entries, self::buildFrontmatterMenuEntries($hugoHelper, $path, $sanitizedPath, $fileContent));
+
         return $entries;
     }
 
     /**
-     * @param HugoFile $hugoHelper
-     * @param string $path
-     * @param string $sanitizedPath
-     * @param string $fileContent
      * @return MenuEntry[]
      */
     private static function buildFrontmatterMenuEntries(HugoFile $hugoHelper, string $path, string $sanitizedPath, string $fileContent): array
@@ -37,9 +34,9 @@ class MenuEntries
         $frontMatterMenus = $hugoHelper->getMenus();
         $isIndexPage = str_ends_with($path, '_index.md');
 
-        $checksumSourcePrefix = $fileContent . $sanitizedPath . ($isIndexPage ? 'index' : 'page');
+        $checksumSourcePrefix = $fileContent.$sanitizedPath.($isIndexPage ? 'index' : 'page');
         if ($isIndexPage) {
-            $checksum = md5($checksumSourcePrefix . $sanitizedPath);
+            $checksum = md5($checksumSourcePrefix.$sanitizedPath);
             $entries[] = new MenuEntry([
                 'menu' => $sanitizedPath,
                 'order' => self::determineOrder($sanitizedPath, $path),
@@ -56,7 +53,7 @@ class MenuEntries
                 $name = $menu;
             }
 
-            $checksum = md5($checksumSourcePrefix . $name);
+            $checksum = md5($checksumSourcePrefix.$name);
             $entries[] = new MenuEntry([
                 'menu' => $name,
                 'order' => self::determineOrder($menu, $path),
@@ -66,11 +63,12 @@ class MenuEntries
                 'type' => $isIndexPage ? 'index' : 'page',
             ]);
         }
+
         return $entries;
     }
 
     /**
-     * @param string|array<string> $menu
+     * @param  string|array<string>  $menu
      */
     private static function determineOrder(string|array $menu, string $path): ?int
     {
@@ -82,7 +80,7 @@ class MenuEntries
         if (
             (str_ends_with($path, '_index.md') && is_string($menu))
             ||
-            (is_array($menu) && !array_key_exists('order', $menu))) {
+            (is_array($menu) && ! array_key_exists('order', $menu))) {
             $order = 0;
         }
 

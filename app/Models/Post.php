@@ -19,6 +19,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Link> $links
  * @property-read int|null $links_count
+ *
  * @method static \Database\Factories\PostFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Post newQuery()
@@ -30,6 +31,7 @@ use Illuminate\Support\Carbon;
  * @method static \Illuminate\Database\Eloquent\Builder|Post wherePublishedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedAt($value)
+ *
  * @mixin \Eloquent
  */
 class Post extends Model
@@ -53,7 +55,7 @@ class Post extends Model
         $content = $file->getContent();
         $frontmatter = $file->getFrontmatter();
 
-        $post = new Post();
+        $post = new Post;
         if (array_key_exists('title', $frontmatter)) {
             $post->title = $frontmatter['title'];
         }
