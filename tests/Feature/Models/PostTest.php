@@ -98,13 +98,12 @@ EOD;
         ->title->toBeNull();
 });
 
-it('has index on checksum column', function () {
-    $schemaManager = Schema::getConnection()->getDoctrineSchemaManager();
-    $indexes = $schemaManager->listTableIndexes('posts');
-
-    $foundIndex = array_key_exists('posts_checksum_index', $indexes);
-
-    expect($foundIndex)->toBeTrue();
+test('has index on checksum column', function () {
+    $indexes = Schema::getIndexes('posts');
+    $filtered = array_filter($indexes, function ($element) {
+        return $element['name'] == 'posts_checksum_index';
+    });
+    expect($filtered)->not->toBeEmpty();
 });
 
 it('has many links', function () {

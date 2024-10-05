@@ -27,10 +27,11 @@ it('has path', function () {
 });
 
 test('has index on path column', function () {
-    $schemaManager = Schema::getConnection()->getDoctrineSchemaManager();
-    $indexes = $schemaManager->listTableIndexes('links');
-    expect(array_key_exists('links_path_index', $indexes))
-        ->toBeTrue();
+    $indexes = Schema::getIndexes('links');
+    $filtered = array_filter($indexes, function ($element) {
+       return $element['name'] == 'links_path_index';
+    });
+    expect($filtered)->not->toBeEmpty();
 });
 
 it('can be created from file path', function () {
