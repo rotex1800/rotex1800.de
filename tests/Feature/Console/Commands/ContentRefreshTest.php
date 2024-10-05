@@ -33,7 +33,7 @@ it('loads content into database', function () {
 
     $this->assertDatabaseCount(Post::class, 4);
     $this->assertDatabaseCount(Link::class, 4);
-    $this->assertDatabaseCount('link_menu_entry', 6);
+    $this->assertDatabaseCount('link_menu_entry', 7);
 
     $this->assertDatabaseHas('links', ['path' => 'kalender']);
     $kalenderLink = Link::where('path', '=', 'kalender')->first();
@@ -76,8 +76,8 @@ it('creates a relation between post and link', function () {
     $link = Link::first();
 
     expect($post->links->first())
-        ->toBeSameEntityAs($link);
-    expect($link->post)
+        ->toBeSameEntityAs($link)
+        ->and($link->post)
         ->toBeSameEntityAs($post);
 });
 
@@ -94,6 +94,7 @@ it('does not create duplicate entries', function () {
     // Assert
     $this->assertDatabaseCount(Post::class, 1);
     $this->assertDatabaseCount(Link::class, 1);
+    $this->assertDatabaseCount(MenuEntry::class, 1);
 
     $this->assertDatabaseHas('links', ['path' => 'kalender']);
 });
@@ -112,6 +113,7 @@ it('does not create duplicate links after changing title', function () {
     // Assert
     $this->assertDatabaseCount(Post::class, 1);
     $this->assertDatabaseCount(Link::class, 1);
+    $this->assertDatabaseCount(MenuEntry::class, 1);
 
     $this->assertDatabaseHas('links', ['path' => 'kalender']);
 });
