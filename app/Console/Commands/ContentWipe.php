@@ -14,21 +14,23 @@ class ContentWipe extends Command
      *
      * @var string
      */
-    protected $signature = 'content:wipe';
+    protected $signature = 'content:wipe {--force}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Deletes all content from the database.';
 
     /**
      * Execute the console command.
      */
     public function handle(): void
     {
-        $this->choice('Do you really want to delete all content?', ['no', 'yes']);
+        if (!$this->option('force')) {
+            $this->choice('Do you really want to delete all content?', ['no', 'yes']);
+        }
 
         Link::truncate();
         Post::truncate();

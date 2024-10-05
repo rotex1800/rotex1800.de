@@ -39,3 +39,22 @@ it('removes all posts and links from database', function () {
     assertDatabaseCount('links', 0);
     assertDatabaseCount('menu_entries', 0);
 });
+
+it('skips confirmation when using force flag', function () {
+    Post::factory(4)
+        ->has(Link::factory())
+        ->create();
+
+    MenuEntry::factory(4)->create();
+
+    assertDatabaseCount('posts', 4);
+    assertDatabaseCount('links', 4);
+    assertDatabaseCount('menu_entries', 4);
+
+    artisan('content:wipe', ['--force' => true])
+        ->assertExitCode(0);
+
+    assertDatabaseCount('posts', 0);
+    assertDatabaseCount('links', 0);
+    assertDatabaseCount('menu_entries', 0);
+});
