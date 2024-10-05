@@ -28,7 +28,7 @@ class ContentWipe extends Command
      */
     public function handle(): void
     {
-        if (!$this->option('force')) {
+        if (! $this->option('force')) {
             $this->choice('Do you really want to delete all content?', ['no', 'yes']);
         }
 
