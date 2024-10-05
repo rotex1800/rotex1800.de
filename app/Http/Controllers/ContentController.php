@@ -37,13 +37,13 @@ class ContentController extends Controller
 
         $secondaryMenu = $link->menusEntries()
             ->where('menu', '!=', 'main')
-            ->first()
-        ;
+            ->first();
+
         return view('app')->with([
             'content' => $this->markdown->toHtml($post->content),
             'path' => $link->path,
             'title' => $post->title,
-            'secondaryMenu' => $secondaryMenu ? $secondaryMenu->menu : null
+            'secondaryMenu' => $secondaryMenu ? $secondaryMenu->menu : null,
         ]);
     }
 

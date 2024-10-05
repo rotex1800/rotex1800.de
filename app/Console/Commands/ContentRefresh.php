@@ -49,7 +49,7 @@ class ContentRefresh extends Command
     }
 
     /**
-     * @param array<string> $markdownFiles
+     * @param  array<string>  $markdownFiles
      */
     private function deleteOutdatedPosts(array $markdownFiles): void
     {
@@ -63,7 +63,7 @@ class ContentRefresh extends Command
     }
 
     /**
-     * @param array<string> $paths
+     * @param  array<string>  $paths
      */
     private function createPostEntries(array $paths): void
     {
