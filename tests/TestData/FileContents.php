@@ -127,6 +127,7 @@ EOD;
 ---
 title: Second Example
 date: 2014-08-10
+menu: test
 ---
 # Hello Rotex 1800
 
