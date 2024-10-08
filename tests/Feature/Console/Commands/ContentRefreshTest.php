@@ -6,7 +6,7 @@ use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
 use Tests\TestData\FileContents;
-
+use function Pest\Laravel\artisan;
 use function Pest\Laravel\assertDatabaseEmpty;
 use function Pest\Laravel\assertDatabaseHas;
 
@@ -29,7 +29,9 @@ it('loads content into database', function () {
     Storage::disk('content')->put('_index.md', FileContents::EXAMPLE);
     Storage::disk('content')->put('legal/_index.md', FileContents::EXAMPLE_CHANGED_TITLE);
 
-    Artisan::call('content:refresh');
+    artisan('content:refresh')
+        ->expectsOutput("Creating posts...")
+        ->expectsOutput("\n");
 
     $this->assertDatabaseCount(Post::class, 4);
     $this->assertDatabaseCount(Link::class, 4);
