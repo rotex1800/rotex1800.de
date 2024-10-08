@@ -147,7 +147,8 @@ title: Index page
 menu:
     -   name: main
         order: 10
-    -   name: posts
+categories:
+    - posts
 ---
 This is an index page.
 EOD;
