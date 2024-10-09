@@ -71,17 +71,17 @@ class ContentRefresh extends Command
         $this->withProgressBar($paths, function ($path) {
             try {
                 $fileContent = Storage::disk('content')->get($path);
-                if ($fileContent == null) {
+                if ($fileContent === null) {
                     return;
                 }
                 $post = Post::fromHugoContent($fileContent);
                 $menuEntries = MenuEntries::fromFile($path);
                 foreach ($menuEntries as $entry) {
-                    if (MenuEntry::where('checksum', '=', $entry->checksum)->count() == 0) {
+                    if (MenuEntry::where('checksum', '=', $entry->checksum)->count() === 0) {
                         $entry->save();
                     }
                 }
-                if (Post::where('checksum', '=', $post->checksum)->count() == 0) {
+                if (Post::where('checksum', '=', $post->checksum)->count() === 0) {
                     $post->save();
                     $link = Link::fromFilePath($path);
                     Link::where('path', '=', $link->path)->delete();
@@ -89,7 +89,6 @@ class ContentRefresh extends Command
                     foreach ($menuEntries as $menuEntry) {
                         $link->menusEntries()->attach($menuEntry->id);
                     }
-                    $link->save();
                 }
             } catch (Exception $exception) {
                 report($exception);

@@ -35,7 +35,7 @@ class ContentController extends Controller
             abort(404);
         }
 
-        $secondaryMenu = $link->menusEntries()
+        $categoryMenu = $link->menusEntries()
             ->where('menu', '!=', 'main')
             ->first();
 
@@ -43,7 +43,7 @@ class ContentController extends Controller
             'content' => $this->markdown->toHtml($post->content),
             'path' => $link->path,
             'title' => $post->title,
-            'secondaryMenu' => $secondaryMenu ? $secondaryMenu->menu : null,
+            'categoryMenu' => $categoryMenu ? $categoryMenu->menu : null,
         ]);
     }
 

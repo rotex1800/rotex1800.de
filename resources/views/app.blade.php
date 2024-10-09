@@ -16,9 +16,9 @@
         <h1 class="ms-56 text-center">{{ $title }}</h1>
     @endisset
     <div class="flex flex-row w-full">
-        @isset($secondaryMenu)
+        @isset($categoryMenu)
             <div class="">
-                <livewire:secondary-menu current-path="{{ $path }}" menu="{{ $secondaryMenu }}"/>
+                <livewire:category-menu current-path="{{ $path }}" menu="{{ $categoryMenu }}"/>
             </div>
         @endisset
         <div id="content" class="justify-center prose p-4 mx-auto">
