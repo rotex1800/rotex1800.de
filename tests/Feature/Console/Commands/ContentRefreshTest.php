@@ -6,6 +6,7 @@ use App\Models\MenuEntries;
 use App\Models\MenuEntry;
 use App\Models\Post;
 use Tests\TestData\FileContents;
+
 use function Pest\Laravel\artisan;
 use function Pest\Laravel\assertDatabaseEmpty;
 use function Pest\Laravel\assertDatabaseHas;
