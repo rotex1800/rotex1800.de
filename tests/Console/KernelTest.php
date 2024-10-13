@@ -8,6 +8,6 @@ test('Correctly imports the commands', function () {
     $all = Artisan::all();
     expect($all['content:wipe'])
         ->not->toBeNull()
-        ->and($all["content:refresh"])
+        ->and($all['content:refresh'])
         ->not->toBeNull();
 });
