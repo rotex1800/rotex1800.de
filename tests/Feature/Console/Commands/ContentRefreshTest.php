@@ -31,7 +31,7 @@ it('loads content into database', function () {
     Storage::disk('content')->put('legal/_index.md', FileContents::EXAMPLE_CHANGED_TITLE);
 
     artisan('content:refresh')
-        ->expectsOutput("Creating posts...")
+        ->expectsOutput('Creating posts...')
         ->expectsOutput("\n");
 
     $this->assertDatabaseCount(Post::class, 4);
