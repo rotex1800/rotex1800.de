@@ -2,7 +2,6 @@
 
 namespace Tests\Console;
 
-use App\Console\Commands\ContentWipe;
 use Illuminate\Support\Facades\Artisan;
 
 test('Correctly imports the commands', function () {
