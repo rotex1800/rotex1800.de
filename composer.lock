@@ -6722,16 +6722,16 @@
         },
         {
             "name": "christophrumpel/missing-livewire-assertions",
-            "version": "v2.9.0",
+            "version": "v2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/christophrumpel/missing-livewire-assertions.git",
-                "reference": "04e2b3fad0224273f923ea35140bf96ba0be0e19"
+                "reference": "7a87e9291f0b4c9f1d414b8195435a24d980d0a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/christophrumpel/missing-livewire-assertions/zipball/04e2b3fad0224273f923ea35140bf96ba0be0e19",
-                "reference": "04e2b3fad0224273f923ea35140bf96ba0be0e19",
+                "url": "https://api.github.com/repos/christophrumpel/missing-livewire-assertions/zipball/7a87e9291f0b4c9f1d414b8195435a24d980d0a2",
+                "reference": "7a87e9291f0b4c9f1d414b8195435a24d980d0a2",
                 "shasum": ""
             },
             "require": {
@@ -6781,9 +6781,9 @@
             ],
             "support": {
                 "issues": "https://github.com/christophrumpel/missing-livewire-assertions/issues",
-                "source": "https://github.com/christophrumpel/missing-livewire-assertions/tree/v2.9.0"
+                "source": "https://github.com/christophrumpel/missing-livewire-assertions/tree/v2.9.1"
             },
-            "time": "2024-10-22T06:51:48+00:00"
+            "time": "2024-11-04T09:03:03+00:00"
         },
         {
             "name": "composer/class-map-generator",
