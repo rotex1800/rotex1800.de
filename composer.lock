@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "179c365ff1e0043c584c5793d0f25da0",
+    "content-hash": "c849015336f292b6cf1706f56bb2404f",
     "packages": [
         {
             "name": "brick/math",
@@ -10329,34 +10329,34 @@
         },
         {
             "name": "sinnbeck/laravel-dom-assertions",
-            "version": "v1.5.4",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinnbeck/laravel-dom-assertions.git",
-                "reference": "ff847b0b9becd8002b077144b8116f8ae944ab89"
+                "reference": "a12cd7a8901b9a49e40cc27fabff4bf71ab1f592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinnbeck/laravel-dom-assertions/zipball/ff847b0b9becd8002b077144b8116f8ae944ab89",
-                "reference": "ff847b0b9becd8002b077144b8116f8ae944ab89",
+                "url": "https://api.github.com/repos/sinnbeck/laravel-dom-assertions/zipball/a12cd7a8901b9a49e40cc27fabff4bf71ab1f592",
+                "reference": "a12cd7a8901b9a49e40cc27fabff4bf71ab1f592",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "illuminate/testing": "^9.0|^10.0|^11.0",
+                "illuminate/testing": "^9.0|^10.0|^11.0|^12.0",
                 "php": "^8.0",
                 "symfony/css-selector": "^6.0|^7.0"
             },
             "require-dev": {
+                "larastan/larastan": "^2.0|^3.0",
                 "laravel/pint": "^1.2",
-                "nunomaduro/larastan": "^2.2",
-                "orchestra/testbench": "^7.0|^8.0|^9.0",
-                "pestphp/pest": "^1.0|^2.34",
+                "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0",
+                "pestphp/pest": "^1.0|^2.34|^3.7",
                 "phpstan/extension-installer": "^1.2",
-                "phpstan/phpstan-deprecation-rules": "^1.0",
-                "phpstan/phpstan-phpunit": "^1.1",
-                "vimeo/psalm": "^4.29|^5.22"
+                "phpstan/phpstan-deprecation-rules": "^1.0|^2.0",
+                "phpstan/phpstan-phpunit": "^1.1|^2.0",
+                "vimeo/psalm": "^4.29|^5.22|^6.6"
             },
             "type": "library",
             "extra": {
@@ -10393,9 +10393,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinnbeck/laravel-dom-assertions/issues",
-                "source": "https://github.com/sinnbeck/laravel-dom-assertions/tree/v1.5.4"
+                "source": "https://github.com/sinnbeck/laravel-dom-assertions/tree/v2.0.0"
             },
-            "time": "2024-08-28T06:25:47+00:00"
+            "time": "2025-03-31T09:59:50+00:00"
         },
         {
             "name": "spatie/backtrace",
