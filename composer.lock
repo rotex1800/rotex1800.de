@@ -10542,16 +10542,16 @@
         },
         {
             "name": "sinnbeck/laravel-dom-assertions",
-            "version": "v2.3.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinnbeck/laravel-dom-assertions.git",
-                "reference": "8e6e1b0c3bba8f45ab31bf6c8d6cea9c1c038a15"
+                "reference": "cbb143f2a1678929a58d89d0ddecbad8f22a857b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinnbeck/laravel-dom-assertions/zipball/8e6e1b0c3bba8f45ab31bf6c8d6cea9c1c038a15",
-                "reference": "8e6e1b0c3bba8f45ab31bf6c8d6cea9c1c038a15",
+                "url": "https://api.github.com/repos/sinnbeck/laravel-dom-assertions/zipball/cbb143f2a1678929a58d89d0ddecbad8f22a857b",
+                "reference": "cbb143f2a1678929a58d89d0ddecbad8f22a857b",
                 "shasum": ""
             },
             "require": {
@@ -10606,9 +10606,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinnbeck/laravel-dom-assertions/issues",
-                "source": "https://github.com/sinnbeck/laravel-dom-assertions/tree/v2.3.0"
+                "source": "https://github.com/sinnbeck/laravel-dom-assertions/tree/v2.5.0"
             },
-            "time": "2025-09-30T06:05:17+00:00"
+            "time": "2025-10-09T11:53:16+00:00"
         },
         {
             "name": "spatie/backtrace",
